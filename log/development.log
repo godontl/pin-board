@@ -1,0 +1,2121 @@
+Started GET "/" for 127.0.0.1 at 2022-05-31 10:14:13 +0200
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/stage/.rvm/gems/ruby-2.5.0/gems/railties-5.2.0/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/stage/.rvm/gems/ruby-2.5.0/gems/railties-5.2.0/lib/rails/templates/rails/welcome/index.html.erb (8.9ms)
+Completed 200 OK in 57ms (Views: 39.5ms | ActiveRecord: 0.0ms)
+
+
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ /home/stage/.rvm/gems/ruby-2.5.0/bin/rake:23
+  [1m[35m (167.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ /home/stage/.rvm/gems/ruby-2.5.0/bin/rake:23
+  [1m[35m (116.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ /home/stage/.rvm/gems/ruby-2.5.0/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/stage/.rvm/gems/ruby-2.5.0/bin/rake:23
+Migrating to CreatePins (20220531084651)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/stage/.rvm/gems/ruby-2.5.0/bin/rake:23
+  [1m[35m (9.0ms)[0m  [1m[35mCREATE TABLE "pins" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "description" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20220531084651_create_pins.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20220531084651"]]
+  ↳ /home/stage/.rvm/gems/ruby-2.5.0/bin/rake:23
+  [1m[35m (145.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/stage/.rvm/gems/ruby-2.5.0/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /home/stage/.rvm/gems/ruby-2.5.0/bin/rake:23
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/stage/.rvm/gems/ruby-2.5.0/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-05-31 08:49:30.145558"], ["updated_at", "2022-05-31 08:49:30.145558"]]
+  ↳ /home/stage/.rvm/gems/ruby-2.5.0/bin/rake:23
+  [1m[35m (84.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/stage/.rvm/gems/ruby-2.5.0/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/stage/.rvm/gems/ruby-2.5.0/bin/rake:23
+Started GET "/" for 127.0.0.1 at 2022-05-31 10:56:48 +0200
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/stage/.rvm/gems/ruby-2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  
+ActionController::RoutingError (uninitialized constant ApplicationControllerdef):
+  
+app/controllers/pins_controller.rb:1:in `<main>'
+Started GET "/" for 127.0.0.1 at 2022-05-31 10:57:15 +0200
+Processing by PinsController#index as HTML
+  Rendering pins/index.html.haml within layouts/application
+  Rendered pins/index.html.haml within layouts/application (2.6ms)
+Completed 200 OK in 1519ms (Views: 1517.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pins/new" for 127.0.0.1 at 2022-05-31 11:03:54 +0200
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/stage/.rvm/gems/ruby-2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by PinsController#new as HTML
+  Rendering pins/new.html.haml within layouts/application
+  Rendered pins/_form.html.haml (2.2ms)
+  Rendered pins/new.html.haml within layouts/application (6.1ms)
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (The line was indented 2 levels deeper than the previous line.):
+     9:      %li = msg
+    10:      
+    11: .form-group
+    12:   = f.input :title, input_html: { class: 'form-control' }
+    13:   
+    14: .form-group
+    15:   = f.input :description, input_html: { class: 'form-control' }
+  
+app/views/pins/_form.html.haml:12
+app/views/pins/new.html.haml:2:in `_app_views_pins_new_html_haml__2312913635259449685_47147384557420'
+Started GET "/pins/new" for 127.0.0.1 at 2022-05-31 11:03:57 +0200
+Processing by PinsController#new as HTML
+  Rendering pins/new.html.haml within layouts/application
+  Rendered pins/_form.html.haml (1.5ms)
+  Rendered pins/new.html.haml within layouts/application (4.2ms)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (The line was indented 2 levels deeper than the previous line.):
+     9:      %li = msg
+    10:      
+    11: .form-group
+    12:   = f.input :title, input_html: { class: 'form-control' }
+    13:   
+    14: .form-group
+    15:   = f.input :description, input_html: { class: 'form-control' }
+  
+app/views/pins/_form.html.haml:12
+app/views/pins/new.html.haml:2:in `_app_views_pins_new_html_haml__2312913635259449685_70359353513900'
+Started GET "/pins/new" for 127.0.0.1 at 2022-05-31 11:04:37 +0200
+Processing by PinsController#new as HTML
+  Rendering pins/new.html.haml within layouts/application
+  Rendered pins/_form.html.haml (1.6ms)
+  Rendered pins/new.html.haml within layouts/application (4.7ms)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (The line was indented 4 levels deeper than the previous line.):
+     9:      %li = msg
+    10:      
+    11: .form-group
+    12:     = f.input :title, input_html: { class: 'form-control' }
+    13:   
+    14: .form-group
+    15:     = f.input :description, input_html: { class: 'form-control' }
+  
+app/views/pins/_form.html.haml:12
+app/views/pins/new.html.haml:2:in `_app_views_pins_new_html_haml__2312913635259449685_47147379784140'
+Started GET "/pins/new" for 127.0.0.1 at 2022-05-31 11:05:01 +0200
+Processing by PinsController#new as HTML
+  Rendering pins/new.html.haml within layouts/application
+  Rendered pins/_form.html.haml (97.4ms)
+  Rendered pins/new.html.haml within layouts/application (100.7ms)
+Completed 500 Internal Server Error in 103ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `model_name' for nil:NilClass):
+    1: = simple_form_for @pin, html: { multipart: true } do |f|
+    2:  - if @pin.errors.any?
+    3:   #errors
+    4:    %h2
+  
+app/views/pins/_form.html.haml:1:in `_app_views_pins__form_html_haml__4173435724757684256_70359357011260'
+app/views/pins/new.html.haml:2:in `_app_views_pins_new_html_haml__2312913635259449685_70359357070140'
+Started GET "/pins/new" for 127.0.0.1 at 2022-05-31 11:06:21 +0200
+Processing by PinsController#new as HTML
+  Rendering pins/new.html.haml within layouts/application
+  Rendered pins/_form.html.haml (2.4ms)
+  Rendered pins/new.html.haml within layouts/application (5.0ms)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/stage/pin_board/app/views/pins/_form.html.haml:1: syntax error, unexpected tLABEL, expecting keyword_in
+...=  simple_form_ for @pin, html: { multipart: true } do |f|
+...                          ^~~~~
+/home/stage/pin_board/app/views/pins/_form.html.haml:1: syntax error, unexpected keyword_do_block, expecting keyword_end
+...n, html: { multipart: true } do |f|
+...                             ^~
+/home/stage/pin_board/app/views/pins/_form.html.haml:8: syntax error, unexpected keyword_do_block, expecting keyword_end
+...in.errors.full_messages.each do |msg|
+...                             ^~
+/home/stage/pin_board/app/views/pins/_form.html.haml:18: syntax error, unexpected keyword_ensure, expecting end-of-input
+...:Util.html_safe(_erbout);ensure;@haml_buffer = @haml_buffer....
+...                         ^~~~~~):
+  
+app/views/pins/_form.html.haml:1: syntax error, unexpected tLABEL, expecting keyword_in
+app/views/pins/_form.html.haml:1: syntax error, unexpected keyword_do_block, expecting keyword_end
+app/views/pins/_form.html.haml:8: syntax error, unexpected keyword_do_block, expecting keyword_end
+app/views/pins/_form.html.haml:18: syntax error, unexpected keyword_ensure, expecting end-of-input
+app/views/pins/new.html.haml:2:in `_app_views_pins_new_html_haml__2312913635259449685_70359355911260'
+Started GET "/pins/new" for 127.0.0.1 at 2022-05-31 11:06:32 +0200
+Processing by PinsController#new as HTML
+  Rendering pins/new.html.haml within layouts/application
+  Rendered pins/_form.html.haml (5.5ms)
+  Rendered pins/new.html.haml within layouts/application (8.4ms)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `model_name' for nil:NilClass):
+    1: = simple_form_for @pin, html: { multipart: true } do |f|
+    2:  - if @pin.errors.any?
+    3:   #errors
+    4:    %h2
+  
+app/views/pins/_form.html.haml:1:in `_app_views_pins__form_html_haml__4173435724757684256_70359354197700'
+app/views/pins/new.html.haml:2:in `_app_views_pins_new_html_haml__2312913635259449685_70359354306060'
+Started GET "/pins/new" for 127.0.0.1 at 2022-05-31 11:07:45 +0200
+Processing by PinsController#new as HTML
+  Rendering pins/new.html.haml within layouts/application
+  Rendered pins/_form.html.haml (5.9ms)
+  Rendered pins/new.html.haml within layouts/application (8.7ms)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `model_name' for nil:NilClass):
+    1: 
+    2: = simple_form_for @pin, html: { multipart: true } do |f|
+    3: 	- if @pin.errors.any?
+    4: 		#errors
+    5: 			%h2
+  
+app/views/pins/_form.html.haml:2:in `_app_views_pins__form_html_haml__4173435724757684256_70359353652580'
+app/views/pins/new.html.haml:2:in `_app_views_pins_new_html_haml__2312913635259449685_70359353773240'
+Started GET "/" for 127.0.0.1 at 2022-05-31 11:16:16 +0200
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/stage/.rvm/gems/ruby-2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by PinsController#index as HTML
+  Rendering pins/index.html.haml within layouts/application
+  Rendered pins/index.html.haml within layouts/application (3.6ms)
+Completed 200 OK in 231ms (Views: 224.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pins/new" for 127.0.0.1 at 2022-05-31 11:16:25 +0200
+Processing by PinsController#new as HTML
+  Rendering pins/new.html.haml within layouts/application
+  Rendered pins/_form.html.haml (19.2ms)
+  Rendered pins/new.html.haml within layouts/application (21.0ms)
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `model_name' for nil:NilClass):
+    1: 
+    2: = simple_form_for @pin, html: { multipart: true } do |f|
+    3: 	- if @pin.errors.any?
+    4: 		#errors
+    5: 			%h2
+  
+app/views/pins/_form.html.haml:2:in `_app_views_pins__form_html_haml___3024753846744050701_70104951979980'
+app/views/pins/new.html.haml:2:in `_app_views_pins_new_html_haml__4451995879327683580_70104838676320'
+Started GET "/pins/new" for 127.0.0.1 at 2022-05-31 11:24:25 +0200
+Processing by PinsController#new as HTML
+  Rendering pins/new.html.haml within layouts/application
+  Rendered pins/_form.html.haml (0.9ms)
+  Rendered pins/new.html.haml within layouts/application (2.6ms)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.6ms)
+
+
+  
+ActionView::Template::Error (Illegal nesting: nesting within plain text is illegal.):
+    1: <% content_for :add_pin do %>
+    2:     = simple_form_for @pin, html: { multipart: true } do |f|
+    3:         - if @pin.errors.any?
+    4:             #errors
+    5:                 %h2
+  
+app/views/pins/_form.html.haml:2
+app/views/pins/new.html.haml:2:in `_app_views_pins_new_html_haml__4451995879327683580_70104945662540'
+Started GET "/pins/new" for 127.0.0.1 at 2022-05-31 11:28:11 +0200
+Processing by PinsController#new as HTML
+  Rendering pins/new.html.haml within layouts/application
+  Rendered pins/_form.html.haml (1.4ms)
+  Rendered pins/new.html.haml within layouts/application (3.8ms)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (Invalid tag: "% content_for :add_pin do %".):
+    1: % content_for :add_pin do %
+    2:     = simple_form_for @pin, html: { multipart: true } do |f|
+    3:         - if @pin.errors.any?
+    4:             #errors
+  
+app/views/pins/_form.html.haml:1
+app/views/pins/new.html.haml:2:in `_app_views_pins_new_html_haml__4451995879327683580_70104955429800'
+Started GET "/pins/new" for 127.0.0.1 at 2022-05-31 11:28:38 +0200
+Processing by PinsController#new as HTML
+  Rendering pins/new.html.haml within layouts/application
+  Rendered pins/_form.html.haml (1.7ms)
+  Rendered pins/new.html.haml within layouts/application (4.6ms)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (Illegal nesting: nesting within plain text is illegal.):
+    1: <% content_for :add_pin do %>
+    2:     = simple_form_for @pin, html: { multipart: true } do |f|
+    3:         - if @pin.errors.any?
+    4:             #errors
+    5:                 %h2
+  
+app/views/pins/_form.html.haml:2
+app/views/pins/new.html.haml:2:in `_app_views_pins_new_html_haml__4451995879327683580_70104841510040'
+Started GET "/pins/new" for 127.0.0.1 at 2022-05-31 11:29:39 +0200
+Processing by PinsController#new as HTML
+  Rendering pins/new.html.haml within layouts/application
+  Rendered pins/_form.html.haml (216.8ms)
+  Rendered pins/new.html.haml within layouts/application (219.8ms)
+Completed 500 Internal Server Error in 222ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `image' for #<Pin:0x00007f851ca975b0>):
+     9: 					%li = msg
+    10: 
+    11: 	.form-group
+    12: 		= f.input :image, input_html: { class: 'form-control' }					
+    13: 
+    14: 	.form-group
+    15: 		= f.input :title, input_html: { class: 'form-control' }					
+  
+app/views/pins/_form.html.haml:12:in `block in _app_views_pins__form_html_haml___3024753846744050701_70104844003540'
+app/views/pins/_form.html.haml:1:in `_app_views_pins__form_html_haml___3024753846744050701_70104844003540'
+app/views/pins/new.html.haml:2:in `_app_views_pins_new_html_haml__4451995879327683580_70104844120340'
+Started GET "/pins/new" for 127.0.0.1 at 2022-05-31 11:29:58 +0200
+Processing by PinsController#new as HTML
+  Rendering pins/new.html.haml within layouts/application
+  Rendered pins/_form.html.haml (8.0ms)
+  Rendered pins/new.html.haml within layouts/application (10.0ms)
+Completed 200 OK in 33ms (Views: 31.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-31 11:30:43 +0200
+Processing by PinsController#index as HTML
+  Rendering pins/index.html.haml within layouts/application
+  Rendered pins/index.html.haml within layouts/application (1.6ms)
+Completed 200 OK in 22ms (Views: 21.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-31 11:30:56 +0200
+Processing by PinsController#index as HTML
+  Rendering pins/index.html.haml within layouts/application
+  Rendered pins/index.html.haml within layouts/application (1.5ms)
+Completed 200 OK in 21ms (Views: 19.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pins/new" for 127.0.0.1 at 2022-05-31 11:31:01 +0200
+Processing by PinsController#new as HTML
+  Rendering pins/new.html.haml within layouts/application
+  Rendered pins/_form.html.haml (9.2ms)
+  Rendered pins/new.html.haml within layouts/application (12.2ms)
+Completed 200 OK in 26ms (Views: 25.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/pins" for 127.0.0.1 at 2022-05-31 11:33:50 +0200
+Processing by PinsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XHwlfvSVsMYdRqOnI10f3EqeguiXu6PJAHc/HQTBgExhanuMpYrHHuyN5nnJBdViVMKSMxnADMt3D8XMtzogmw==", "pin"=>{"title"=>"ciao", "description"=>"wedfew"}, "commit"=>"Create Pin"}
+No template found for PinsController#create, rendering head :no_content
+Completed 204 No Content in 22ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/pins/new" for 127.0.0.1 at 2022-05-31 11:34:09 +0200
+Processing by PinsController#new as HTML
+  Rendering pins/new.html.haml within layouts/application
+  Rendered pins/_form.html.haml (8.6ms)
+  Rendered pins/new.html.haml within layouts/application (11.6ms)
+Completed 200 OK in 35ms (Views: 24.9ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/pins" for 127.0.0.1 at 2022-05-31 11:34:10 +0200
+Processing by PinsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UDqQ83XeBKIeBfwt2XErFwJplPCo5SRVi28cEp7mURptLM4BJMFzeu/OufMzKeGpHDWEKyaei1f8F+bDLR3xzQ==", "pin"=>{"title"=>"ciao", "description"=>"wedfew"}, "commit"=>"Create Pin"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/pins_controller.rb:11
+  [1m[36mPin Create (0.7ms)[0m  [1m[32mINSERT INTO "pins" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "ciao"], ["description", "wedfew"], ["created_at", "2022-05-31 09:34:10.776495"], ["updated_at", "2022-05-31 09:34:10.776495"]]
+  ↳ app/controllers/pins_controller.rb:11
+  [1m[35m (198.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/pins_controller.rb:11
+Redirected to http://localhost:3000/pins/1
+Completed 302 Found in 204ms (ActiveRecord: 199.5ms)
+
+
+Started GET "/pins/1" for 127.0.0.1 at 2022-05-31 11:34:10 +0200
+  
+AbstractController::ActionNotFound (The action 'show' could not be found for PinsController):
+  
+actionpack (5.2.0) lib/abstract_controller/base.rb:129:in `process'
+actionview (5.2.0) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.0) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.0) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.0) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.0) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.0) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.0) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.0) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.0) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.5) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.5) lib/rack/etag.rb:25:in `call'
+rack (2.0.5) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.5) lib/rack/head.rb:12:in `call'
+actionpack (5.2.0) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.5) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.5) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.0) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.0) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.0) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started POST "/pins" for 127.0.0.1 at 2022-05-31 11:45:13 +0200
+Processing by PinsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UDqQ83XeBKIeBfwt2XErFwJplPCo5SRVi28cEp7mURptLM4BJMFzeu/OufMzKeGpHDWEKyaei1f8F+bDLR3xzQ==", "pin"=>{"title"=>"ciao", "description"=>"wedfew"}, "commit"=>"Create Pin"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/pins_controller.rb:11
+  [1m[36mPin Create (0.3ms)[0m  [1m[32mINSERT INTO "pins" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "ciao"], ["description", "wedfew"], ["created_at", "2022-05-31 09:45:13.028962"], ["updated_at", "2022-05-31 09:45:13.028962"]]
+  ↳ app/controllers/pins_controller.rb:11
+  [1m[35m (150.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/pins_controller.rb:11
+Redirected to http://localhost:3000/pins/2
+Completed 302 Found in 155ms (ActiveRecord: 150.8ms)
+
+
+Started GET "/pins/2" for 127.0.0.1 at 2022-05-31 11:45:13 +0200
+  
+AbstractController::ActionNotFound (The action 'show' could not be found for PinsController):
+  
+actionpack (5.2.0) lib/abstract_controller/base.rb:129:in `process'
+actionview (5.2.0) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.0) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.0) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.0) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.0) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.0) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.0) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.0) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.0) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.5) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.5) lib/rack/etag.rb:25:in `call'
+rack (2.0.5) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.5) lib/rack/head.rb:12:in `call'
+actionpack (5.2.0) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.5) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.5) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.0) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.0) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.0) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/pins/2" for 127.0.0.1 at 2022-05-31 11:45:23 +0200
+  
+ActionController::RoutingError (undefined local variable or method `only' for PinsController:Class):
+  
+app/controllers/pins_controller.rb:2:in `<class:PinsController>'
+app/controllers/pins_controller.rb:1:in `<main>'
+Started GET "/pins/2" for 127.0.0.1 at 2022-05-31 11:46:01 +0200
+Processing by PinsController#show as HTML
+  Parameters: {"id"=>"2"}
+Completed 500 Internal Server Error in 179ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `parmams' for #<PinsController:0x00007f85292880b0>
+Did you mean?  params
+               params=):
+  
+app/controllers/pins_controller.rb:29:in `find_pin'
+Started GET "/pins/2" for 127.0.0.1 at 2022-05-31 11:46:16 +0200
+Processing by PinsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPin Load (0.2ms)[0m  [1m[34mSELECT  "pins".* FROM "pins" WHERE "pins"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/pins_controller.rb:29
+Completed 406 Not Acceptable in 70ms (ActiveRecord: 0.9ms)
+
+
+  
+ActionController::UnknownFormat (PinsController#show is missing a template for this request format and variant.
+
+request.formats: ["text/html"]
+request.variant: []
+
+NOTE! For XHR/Ajax or API requests, this action would normally respond with 204 No Content: an empty white screen. Since you're loading it in a web browser, we assume that you expected to actually render a template, not nothing, so we're showing an error to be extra-clear. If you expect 204 No Content, carry on. That's what you'll get from an XHR or API request. Give it a shot.):
+  
+actionpack (5.2.0) lib/action_controller/metal/implicit_render.rb:55:in `default_render'
+actionpack (5.2.0) lib/action_controller/metal/basic_implicit_render.rb:6:in `block in send_action'
+actionpack (5.2.0) lib/action_controller/metal/basic_implicit_render.rb:6:in `tap'
+actionpack (5.2.0) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (5.2.0) lib/abstract_controller/base.rb:194:in `process_action'
+actionpack (5.2.0) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.2.0) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (5.2.0) lib/active_support/callbacks.rb:132:in `run_callbacks'
+actionpack (5.2.0) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.0) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.0) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.0) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.0) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.0) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.0) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.0) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.0) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.0) lib/abstract_controller/base.rb:134:in `process'
+actionview (5.2.0) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.0) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.0) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.0) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.0) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.0) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.0) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.0) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.0) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.5) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.5) lib/rack/etag.rb:25:in `call'
+rack (2.0.5) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.5) lib/rack/head.rb:12:in `call'
+actionpack (5.2.0) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.5) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.5) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.0) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.0) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.0) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/pins/2" for 127.0.0.1 at 2022-05-31 11:47:32 +0200
+Processing by PinsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPin Load (0.1ms)[0m  [1m[34mSELECT  "pins".* FROM "pins" WHERE "pins"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/pins_controller.rb:29
+Completed 406 Not Acceptable in 27ms (ActiveRecord: 0.7ms)
+
+
+  
+ActionController::UnknownFormat (PinsController#show is missing a template for this request format and variant.
+
+request.formats: ["text/html"]
+request.variant: []
+
+NOTE! For XHR/Ajax or API requests, this action would normally respond with 204 No Content: an empty white screen. Since you're loading it in a web browser, we assume that you expected to actually render a template, not nothing, so we're showing an error to be extra-clear. If you expect 204 No Content, carry on. That's what you'll get from an XHR or API request. Give it a shot.):
+  
+actionpack (5.2.0) lib/action_controller/metal/implicit_render.rb:55:in `default_render'
+actionpack (5.2.0) lib/action_controller/metal/basic_implicit_render.rb:6:in `block in send_action'
+actionpack (5.2.0) lib/action_controller/metal/basic_implicit_render.rb:6:in `tap'
+actionpack (5.2.0) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (5.2.0) lib/abstract_controller/base.rb:194:in `process_action'
+actionpack (5.2.0) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.2.0) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (5.2.0) lib/active_support/callbacks.rb:132:in `run_callbacks'
+actionpack (5.2.0) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.0) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.0) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.0) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.0) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.0) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.0) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.0) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.0) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.0) lib/abstract_controller/base.rb:134:in `process'
+actionview (5.2.0) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.0) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.0) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.0) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.0) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.0) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.0) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.0) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.0) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.5) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.5) lib/rack/etag.rb:25:in `call'
+rack (2.0.5) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.5) lib/rack/head.rb:12:in `call'
+actionpack (5.2.0) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.5) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.5) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.0) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.0) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.0) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/pins/2" for 127.0.0.1 at 2022-05-31 11:49:45 +0200
+Processing by PinsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPin Load (0.1ms)[0m  [1m[34mSELECT  "pins".* FROM "pins" WHERE "pins"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/pins_controller.rb:29
+  Rendering pins/show.html.haml within layouts/application
+  Rendered pins/show.html.haml within layouts/application (3.0ms)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.1ms)
+
+
+  
+ActionView::Template::Error (Inconsistent indentation: 5 spaces used for indentation, but the rest of the document was indented using 4 spaces.):
+     7:     = csrf_meta_tags
+     8:     %body
+     9:     - flash.each do |name, msg|
+    10:      = content_tag :div, msg, class: "alert alert-info"
+    11:     = yield
+  
+app/views/layouts/application.html.haml:10
+Started GET "/pins/2" for 127.0.0.1 at 2022-05-31 11:50:11 +0200
+Processing by PinsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPin Load (0.2ms)[0m  [1m[34mSELECT  "pins".* FROM "pins" WHERE "pins"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/pins_controller.rb:29
+  Rendering pins/show.html.haml within layouts/application
+  Rendered pins/show.html.haml within layouts/application (1.8ms)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.2ms)
+
+
+  
+SyntaxError (/home/stage/pin_board/app/views/layouts/application.html.haml:15: syntax error, unexpected end-of-input, expecting keyword_end
+          end
+             ^):
+  
+app/views/layouts/application.html.haml:15: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/pins/2" for 127.0.0.1 at 2022-05-31 11:50:45 +0200
+Processing by PinsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPin Load (0.1ms)[0m  [1m[34mSELECT  "pins".* FROM "pins" WHERE "pins"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/pins_controller.rb:29
+  Rendering pins/show.html.haml within layouts/application
+  Rendered pins/show.html.haml within layouts/application (2.9ms)
+Completed 200 OK in 26ms (Views: 24.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-31 11:51:49 +0200
+Processing by PinsController#index as HTML
+  Rendering pins/index.html.haml within layouts/application
+  [1m[36mPin Load (0.2ms)[0m  [1m[34mSELECT "pins".* FROM "pins" ORDER BY created_at DESC[0m
+  ↳ app/views/pins/index.html.haml:1
+  Rendered pins/index.html.haml within layouts/application (7.0ms)
+Completed 200 OK in 27ms (Views: 24.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/pins/2" for 127.0.0.1 at 2022-05-31 11:51:51 +0200
+Processing by PinsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPin Load (0.3ms)[0m  [1m[34mSELECT  "pins".* FROM "pins" WHERE "pins"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/pins_controller.rb:30
+  Rendering pins/show.html.haml within layouts/application
+  Rendered pins/show.html.haml within layouts/application (3.2ms)
+Completed 200 OK in 28ms (Views: 24.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-31 11:51:52 +0200
+Processing by PinsController#index as HTML
+  Rendering pins/index.html.haml within layouts/application
+  [1m[36mPin Load (0.3ms)[0m  [1m[34mSELECT "pins".* FROM "pins" ORDER BY created_at DESC[0m
+  ↳ app/views/pins/index.html.haml:1
+  Rendered pins/index.html.haml within layouts/application (3.7ms)
+Completed 200 OK in 23ms (Views: 21.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/pins/1" for 127.0.0.1 at 2022-05-31 11:51:53 +0200
+Processing by PinsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPin Load (0.3ms)[0m  [1m[34mSELECT  "pins".* FROM "pins" WHERE "pins"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pins_controller.rb:30
+  Rendering pins/show.html.haml within layouts/application
+  Rendered pins/show.html.haml within layouts/application (2.7ms)
+Completed 200 OK in 26ms (Views: 23.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-31 11:51:55 +0200
+Processing by PinsController#index as HTML
+Started GET "/" for 127.0.0.1 at 2022-05-31 11:51:55 +0200
+Processing by PinsController#index as HTML
+  Rendering pins/index.html.haml within layouts/application
+  [1m[36mPin Load (0.2ms)[0m  [1m[34mSELECT "pins".* FROM "pins" ORDER BY created_at DESC[0m
+  ↳ app/views/pins/index.html.haml:1
+  Rendered pins/index.html.haml within layouts/application (3.1ms)
+  Rendering pins/index.html.haml within layouts/application
+  [1m[36mPin Load (0.2ms)[0m  [1m[34mSELECT "pins".* FROM "pins" ORDER BY created_at DESC[0m
+  ↳ app/views/pins/index.html.haml:1
+  Rendered pins/index.html.haml within layouts/application (4.0ms)
+Completed 200 OK in 35ms (Views: 32.8ms | ActiveRecord: 0.2ms)
+
+
+Completed 200 OK in 55ms (Views: 53.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-31 11:57:46 +0200
+Processing by PinsController#index as HTML
+  Rendering pins/index.html.haml within layouts/application
+  [1m[36mPin Load (0.2ms)[0m  [1m[34mSELECT "pins".* FROM "pins" ORDER BY created_at DESC[0m
+  ↳ app/views/pins/index.html.haml:1
+  Rendered pins/index.html.haml within layouts/application (2.7ms)
+Completed 200 OK in 23ms (Views: 22.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-31 11:57:46 +0200
+Processing by PinsController#index as HTML
+  Rendering pins/index.html.haml within layouts/application
+  [1m[36mPin Load (0.2ms)[0m  [1m[34mSELECT "pins".* FROM "pins" ORDER BY created_at DESC[0m
+  ↳ app/views/pins/index.html.haml:1
+  Rendered pins/index.html.haml within layouts/application (3.6ms)
+Completed 200 OK in 23ms (Views: 21.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/pins/2" for 127.0.0.1 at 2022-05-31 11:57:52 +0200
+Processing by PinsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPin Load (0.2ms)[0m  [1m[34mSELECT  "pins".* FROM "pins" WHERE "pins"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/pins_controller.rb:30
+  Rendering pins/show.html.haml within layouts/application
+  Rendered pins/show.html.haml within layouts/application (122.7ms)
+Completed 500 Internal Server Error in 126ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `lint_to' for #<#<Class:0x00007f85142d3908>:0x00007f85296a63e0>
+Did you mean?  link_to):
+    2: %p= @pin.description
+    3: 
+    4: =link_to "Back", root_path
+    5: =lint_to "Edit", edit_pin_path
+  
+app/views/pins/show.html.haml:5:in `_app_views_pins_show_html_haml__170136662393427132_70104951110780'
+Started GET "/pins/2" for 127.0.0.1 at 2022-05-31 11:58:04 +0200
+Processing by PinsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPin Load (0.3ms)[0m  [1m[34mSELECT  "pins".* FROM "pins" WHERE "pins"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/pins_controller.rb:30
+  Rendering pins/show.html.haml within layouts/application
+  Rendered pins/show.html.haml within layouts/application (2.9ms)
+Completed 200 OK in 22ms (Views: 20.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/pins/2/edit" for 127.0.0.1 at 2022-05-31 11:58:07 +0200
+Processing by PinsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPin Load (0.3ms)[0m  [1m[34mSELECT  "pins".* FROM "pins" WHERE "pins"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/pins_controller.rb:30
+  Rendering pins/edit.html.haml within layouts/application
+  Rendered pins/_form.html.haml (8.5ms)
+  Rendered pins/edit.html.haml within layouts/application (11.9ms)
+Completed 200 OK in 32ms (Views: 29.5ms | ActiveRecord: 0.3ms)
+
+
+Started PATCH "/pins/2" for 127.0.0.1 at 2022-05-31 11:58:14 +0200
+  
+AbstractController::ActionNotFound (The action 'update' could not be found for PinsController):
+  
+actionpack (5.2.0) lib/abstract_controller/base.rb:129:in `process'
+actionview (5.2.0) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.0) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.0) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.0) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.0) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.0) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.0) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.0) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.0) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.5) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.5) lib/rack/etag.rb:25:in `call'
+rack (2.0.5) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.5) lib/rack/head.rb:12:in `call'
+actionpack (5.2.0) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.5) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.5) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.0) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.0) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.0) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/pins/2" for 127.0.0.1 at 2022-05-31 12:00:36 +0200
+Processing by PinsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPin Load (0.1ms)[0m  [1m[34mSELECT  "pins".* FROM "pins" WHERE "pins"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/pins_controller.rb:47
+  Rendering pins/show.html.haml within layouts/application
+  Rendered pins/show.html.haml within layouts/application (1.9ms)
+Completed 200 OK in 29ms (Views: 19.2ms | ActiveRecord: 0.6ms)
+
+
+Started DELETE "/pins/2" for 127.0.0.1 at 2022-05-31 12:00:45 +0200
+Processing by PinsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"/KvUutNhMv7innyGZTeA8OTWuBYLQRfucUP3caK1zyXBvYpIgn5FJhNVOViPb0pO+oqozYU6uOwGOw2gEU5v8g==", "id"=>"2"}
+  [1m[36mPin Load (0.1ms)[0m  [1m[34mSELECT  "pins".* FROM "pins" WHERE "pins"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/pins_controller.rb:47
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/pins_controller.rb:37
+  [1m[36mPin Destroy (0.2ms)[0m  [1m[31mDELETE FROM "pins" WHERE "pins"."id" = ?[0m  [["id", 2]]
+  ↳ app/controllers/pins_controller.rb:37
+  [1m[35m (73.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/pins_controller.rb:37
+Redirected to http://localhost:3000/
+Completed 302 Found in 79ms (ActiveRecord: 74.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-31 12:00:45 +0200
+Processing by PinsController#index as HTML
+  Rendering pins/index.html.haml within layouts/application
+  [1m[36mPin Load (0.3ms)[0m  [1m[34mSELECT "pins".* FROM "pins" ORDER BY created_at DESC[0m
+  ↳ app/views/pins/index.html.haml:1
+  Rendered pins/index.html.haml within layouts/application (4.3ms)
+Completed 200 OK in 26ms (Views: 24.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-31 12:01:50 +0200
+Processing by PinsController#index as HTML
+  Rendering pins/index.html.haml within layouts/application
+  [1m[36mPin Load (0.2ms)[0m  [1m[34mSELECT "pins".* FROM "pins" ORDER BY created_at DESC[0m
+  ↳ app/views/pins/index.html.haml:2
+  Rendered pins/index.html.haml within layouts/application (2.9ms)
+Completed 200 OK in 20ms (Views: 19.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/pins/new" for 127.0.0.1 at 2022-05-31 12:01:51 +0200
+Processing by PinsController#new as HTML
+  Rendering pins/new.html.haml within layouts/application
+  Rendered pins/_form.html.haml (9.8ms)
+  Rendered pins/new.html.haml within layouts/application (12.6ms)
+Completed 200 OK in 31ms (Views: 29.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-31 12:01:52 +0200
+Processing by PinsController#index as HTML
+  Rendering pins/index.html.haml within layouts/application
+  [1m[36mPin Load (0.3ms)[0m  [1m[34mSELECT "pins".* FROM "pins" ORDER BY created_at DESC[0m
+  ↳ app/views/pins/index.html.haml:2
+  Rendered pins/index.html.haml within layouts/application (3.5ms)
+Completed 200 OK in 27ms (Views: 25.6ms | ActiveRecord: 0.3ms)
+
+
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/stage/.rvm/gems/ruby-2.5.0/bin/rake:23
+Migrating to DeviseCreateUsers (20220531102211)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/stage/.rvm/gems/ruby-2.5.0/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20220531102211_devise_create_users.rb:5
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20220531102211_devise_create_users.rb:5
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  ↳ db/migrate/20220531102211_devise_create_users.rb:39
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  ↳ db/migrate/20220531102211_devise_create_users.rb:40
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20220531102211"]]
+  ↳ /home/stage/.rvm/gems/ruby-2.5.0/bin/rake:23
+  [1m[35m (127.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/stage/.rvm/gems/ruby-2.5.0/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /home/stage/.rvm/gems/ruby-2.5.0/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/stage/.rvm/gems/ruby-2.5.0/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/stage/.rvm/gems/ruby-2.5.0/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/stage/.rvm/gems/ruby-2.5.0/bin/rake:23
+Started GET "/users/sign_up" for 127.0.0.1 at 2022-05-31 12:22:50 +0200
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/stage/.rvm/gems/ruby-2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.9ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (91.6ms)
+Completed 200 OK in 317ms (Views: 300.3ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2022-05-31 12:23:07 +0200
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Rznw+ZxLuib1KUE2TIwr7qcRqSjf4RD4mM9BCuFhETt6L64LzVTN/gTiBOim1OFQuU2581Gav/rvt7vbUpqx7A==", "user"=>{"email"=>"hello@ciao.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/stage/.rvm/gems/ruby-2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "hello@ciao.com"], ["LIMIT", 1]]
+  ↳ /home/stage/.rvm/gems/ruby-2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "hello@ciao.com"], ["encrypted_password", "$2a$12$gd/PgL9XKpUgBVQ49m3JZ.o3MGqOPzgEf6BE7DUai34o2PI9DCAQq"], ["created_at", "2022-05-31 10:23:07.900389"], ["updated_at", "2022-05-31 10:23:07.900389"]]
+  ↳ /home/stage/.rvm/gems/ruby-2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[35m (119.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/stage/.rvm/gems/ruby-2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 447ms (ActiveRecord: 119.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-31 12:23:08 +0200
+Processing by PinsController#index as HTML
+  Rendering pins/index.html.haml within layouts/application
+  [1m[36mPin Load (0.2ms)[0m  [1m[34mSELECT "pins".* FROM "pins" ORDER BY created_at DESC[0m
+  ↳ app/views/pins/index.html.haml:2
+  Rendered pins/index.html.haml within layouts/application (9.5ms)
+Completed 200 OK in 32ms (Views: 29.0ms | ActiveRecord: 0.5ms)
+
+
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/stage/.rvm/gems/ruby-2.5.0/bin/rake:23
+Migrating to AddUserIdToPins (20220531102525)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/stage/.rvm/gems/ruby-2.5.0/bin/rake:23
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "pins" ADD "user_id" integer[0m
+  ↳ db/migrate/20220531102525_add_user_id_to_pins.rb:3
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20220531102525_add_user_id_to_pins.rb:4
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_pins_on_user_id" ON "pins" ("user_id")[0m
+  ↳ db/migrate/20220531102525_add_user_id_to_pins.rb:4
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20220531102525"]]
+  ↳ /home/stage/.rvm/gems/ruby-2.5.0/bin/rake:23
+  [1m[35m (129.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/stage/.rvm/gems/ruby-2.5.0/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /home/stage/.rvm/gems/ruby-2.5.0/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/stage/.rvm/gems/ruby-2.5.0/bin/rake:23
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/stage/.rvm/gems/ruby-2.5.0/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/stage/.rvm/gems/ruby-2.5.0/bin/rake:23
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Started GET "/" for 127.0.0.1 at 2022-05-31 12:28:56 +0200
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/stage/.rvm/gems/ruby-2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by PinsController#index as HTML
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 0.4ms)
+
+
+  
+NoMethodError (undefined method `belong_to' for #<Class:0x000055c2512e7980>
+Did you mean?  belongs_to):
+  
+app/models/pin.rb:2:in `<class:Pin>'
+app/models/pin.rb:1:in `<main>'
+app/controllers/pins_controller.rb:5:in `index'
+Started GET "/" for 127.0.0.1 at 2022-05-31 12:29:18 +0200
+Processing by PinsController#index as HTML
+  Rendering pins/index.html.haml within layouts/application
+  [1m[36mPin Load (0.2ms)[0m  [1m[34mSELECT "pins".* FROM "pins" ORDER BY created_at DESC[0m
+  ↳ app/views/pins/index.html.haml:2
+  Rendered pins/index.html.haml within layouts/application (10.7ms)
+Completed 200 OK in 223ms (Views: 185.6ms | ActiveRecord: 0.8ms)
+
+
+  [1m[36mPin Load (0.1ms)[0m  [1m[34mSELECT  "pins".* FROM "pins" ORDER BY "pins"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPin Update (0.6ms)[0m  [1m[33mUPDATE "pins" SET "updated_at" = ?, "user_id" = ? WHERE "pins"."id" = ?[0m  [["updated_at", "2022-05-31 10:30:01.402239"], ["user_id", 1], ["id", 1]]
+  [1m[35m (133.1ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/" for 127.0.0.1 at 2022-05-31 12:32:14 +0200
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/stage/.rvm/gems/ruby-2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by PinsController#index as HTML
+  Rendering pins/index.html.haml within layouts/application
+  [1m[36mPin Load (0.2ms)[0m  [1m[34mSELECT "pins".* FROM "pins" ORDER BY created_at DESC[0m
+  ↳ app/views/pins/index.html.haml:2
+  Rendered pins/index.html.haml within layouts/application (10.9ms)
+Completed 200 OK in 220ms (Views: 212.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/pins/1" for 127.0.0.1 at 2022-05-31 12:32:16 +0200
+Processing by PinsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPin Load (0.2ms)[0m  [1m[34mSELECT  "pins".* FROM "pins" WHERE "pins"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pins_controller.rb:47
+  Rendering pins/show.html.haml within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/pins/show.html.haml:3
+  Rendered pins/show.html.haml within layouts/application (73.6ms)
+Completed 200 OK in 90ms (Views: 86.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/pins/1" for 127.0.0.1 at 2022-05-31 12:33:14 +0200
+Processing by PinsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPin Load (0.1ms)[0m  [1m[34mSELECT  "pins".* FROM "pins" WHERE "pins"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pins_controller.rb:47
+  Rendering pins/show.html.haml within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/pins/show.html.haml:5
+  Rendered pins/show.html.haml within layouts/application (4.3ms)
+Completed 200 OK in 23ms (Views: 21.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/pins/1" for 127.0.0.1 at 2022-05-31 12:33:35 +0200
+Processing by PinsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPin Load (0.2ms)[0m  [1m[34mSELECT  "pins".* FROM "pins" WHERE "pins"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pins_controller.rb:47
+  Rendering pins/show.html.haml within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/pins/show.html.haml:5
+  Rendered pins/show.html.haml within layouts/application (4.1ms)
+Completed 200 OK in 21ms (Views: 19.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/pins/1" for 127.0.0.1 at 2022-05-31 12:38:51 +0200
+Processing by PinsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPin Load (0.2ms)[0m  [1m[34mSELECT  "pins".* FROM "pins" WHERE "pins"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pins_controller.rb:47
+  Rendering pins/show.html.haml within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/pins/show.html.haml:5
+  Rendered pins/show.html.haml within layouts/application (3.0ms)
+Completed 200 OK in 2404ms (Views: 2401.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-31 12:39:04 +0200
+Processing by PinsController#index as HTML
+  Rendering pins/index.html.haml within layouts/application
+  [1m[36mPin Load (0.2ms)[0m  [1m[34mSELECT "pins".* FROM "pins" ORDER BY created_at DESC[0m
+  ↳ app/views/pins/index.html.haml:2
+  Rendered pins/index.html.haml within layouts/application (3.5ms)
+Completed 200 OK in 41ms (Views: 39.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-31 12:46:13 +0200
+Processing by PinsController#index as HTML
+  Rendering pins/index.html.haml within layouts/application
+  [1m[36mPin Load (0.2ms)[0m  [1m[34mSELECT "pins".* FROM "pins" ORDER BY created_at DESC[0m
+  ↳ app/views/pins/index.html.haml:2
+  Rendered pins/index.html.haml within layouts/application (3.3ms)
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (The line was indented 4 levels deeper than the previous line.):
+    11:    .navbar-brand= link_to "Pin Board", root_path
+    12:    
+    13: - if user_signed_in?
+    14:     %ul.nav.navbar-nav.navbar-right
+    15:      %li= link_to "New Pin", new_pin_path
+    16:      %li= link_to "Account", edit_user_registration_path
+    17:      %li= link_to "Sign Out", destroy_user_session_path, method: :delete
+  
+app/views/layouts/application.html.haml:14
+Started GET "/" for 127.0.0.1 at 2022-05-31 12:47:00 +0200
+Processing by PinsController#index as HTML
+  Rendering pins/index.html.haml within layouts/application
+  [1m[36mPin Load (0.4ms)[0m  [1m[34mSELECT "pins".* FROM "pins" ORDER BY created_at DESC[0m
+  ↳ app/views/pins/index.html.haml:2
+  Rendered pins/index.html.haml within layouts/application (2.9ms)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (The line was indented 2 levels deeper than the previous line.):
+    11:    .navbar-brand= link_to "Pin Board", root_path
+    12:    
+    13: - if user_signed_in?
+    14:   %ul.nav.navbar-nav.navbar-right
+    15:    %li= link_to "New Pin", new_pin_path
+    16:    %li= link_to "Account", edit_user_registration_path
+    17:    %li= link_to "Sign Out", destroy_user_session_path, method: :delete
+  
+app/views/layouts/application.html.haml:14
+Started GET "/" for 127.0.0.1 at 2022-05-31 12:47:35 +0200
+Processing by PinsController#index as HTML
+  Rendering pins/index.html.haml within layouts/application
+  [1m[36mPin Load (0.3ms)[0m  [1m[34mSELECT "pins".* FROM "pins" ORDER BY created_at DESC[0m
+  ↳ app/views/pins/index.html.haml:2
+  Rendered pins/index.html.haml within layouts/application (3.8ms)
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (couldn't find file 'jquery' with type 'application/javascript'
+Checked in these paths: 
+  /home/stage/pin_board/app/assets/config
+  /home/stage/pin_board/app/assets/images
+  /home/stage/pin_board/app/assets/javascripts
+  /home/stage/pin_board/app/assets/stylesheets
+  /home/stage/.rvm/gems/ruby-2.5.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /home/stage/.rvm/gems/ruby-2.5.0/gems/actioncable-5.2.0/lib/assets/compiled
+  /home/stage/.rvm/gems/ruby-2.5.0/gems/activestorage-5.2.0/app/assets/javascripts
+  /home/stage/.rvm/gems/ruby-2.5.0/gems/actionview-5.2.0/lib/assets/compiled
+  /home/stage/.rvm/gems/ruby-2.5.0/gems/turbolinks-source-5.1.0/lib/assets/javascripts
+  /home/stage/pin_board/node_modules
+  /home/stage/.rvm/gems/ruby-2.5.0/gems/bootstrap-sass-3.4.1/assets/stylesheets
+  /home/stage/.rvm/gems/ruby-2.5.0/gems/bootstrap-sass-3.4.1/assets/javascripts
+  /home/stage/.rvm/gems/ruby-2.5.0/gems/bootstrap-sass-3.4.1/assets/fonts
+  /home/stage/.rvm/gems/ruby-2.5.0/gems/bootstrap-sass-3.4.1/assets/images):
+    3: %head
+    4: 	%title Pin Board
+    5: 	= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    6: 	= javascript_include_tag 'application', 'data-turbolinks-track' => true
+    7: 	= csrf_meta_tags
+    8: %body
+    9: 	%nav.navbar.navbar-default
+  
+app/assets/javascripts/application.js:13
+app/views/layouts/application.html.haml:6:in `_app_views_layouts_application_html_haml___775441309680644033_70153375260120'
+Started GET "/" for 127.0.0.1 at 2022-05-31 12:49:23 +0200
+Processing by PinsController#index as HTML
+  Rendering pins/index.html.haml within layouts/application
+  [1m[36mPin Load (0.3ms)[0m  [1m[34mSELECT "pins".* FROM "pins" ORDER BY created_at DESC[0m
+  ↳ app/views/pins/index.html.haml:2
+  Rendered pins/index.html.haml within layouts/application (3.7ms)
+Completed 500 Internal Server Error in 30ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (couldn't find file 'jquery' with type 'application/javascript'
+Checked in these paths: 
+  /home/stage/pin_board/app/assets/config
+  /home/stage/pin_board/app/assets/images
+  /home/stage/pin_board/app/assets/javascripts
+  /home/stage/pin_board/app/assets/stylesheets
+  /home/stage/.rvm/gems/ruby-2.5.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /home/stage/.rvm/gems/ruby-2.5.0/gems/actioncable-5.2.0/lib/assets/compiled
+  /home/stage/.rvm/gems/ruby-2.5.0/gems/activestorage-5.2.0/app/assets/javascripts
+  /home/stage/.rvm/gems/ruby-2.5.0/gems/actionview-5.2.0/lib/assets/compiled
+  /home/stage/.rvm/gems/ruby-2.5.0/gems/turbolinks-source-5.1.0/lib/assets/javascripts
+  /home/stage/pin_board/node_modules
+  /home/stage/.rvm/gems/ruby-2.5.0/gems/bootstrap-sass-3.4.1/assets/stylesheets
+  /home/stage/.rvm/gems/ruby-2.5.0/gems/bootstrap-sass-3.4.1/assets/javascripts
+  /home/stage/.rvm/gems/ruby-2.5.0/gems/bootstrap-sass-3.4.1/assets/fonts
+  /home/stage/.rvm/gems/ruby-2.5.0/gems/bootstrap-sass-3.4.1/assets/images):
+    3: %head
+    4: 	%title Pin Board
+    5: 	= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    6: 	= javascript_include_tag 'application', 'data-turbolinks-track' => true
+    7: 	= csrf_meta_tags
+    8: %body
+    9: 	%nav.navbar.navbar-default
+  
+app/assets/javascripts/application.js:13
+app/views/layouts/application.html.haml:6:in `_app_views_layouts_application_html_haml___775441309680644033_47231864308660'
+Started GET "/" for 127.0.0.1 at 2022-05-31 12:52:40 +0200
+Processing by PinsController#index as HTML
+  Rendering pins/index.html.haml within layouts/application
+  [1m[36mPin Load (0.3ms)[0m  [1m[34mSELECT "pins".* FROM "pins" ORDER BY created_at DESC[0m
+  ↳ app/views/pins/index.html.haml:2
+  Rendered pins/index.html.haml within layouts/application (3.7ms)
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (couldn't find file 'jquery' with type 'application/javascript'
+Checked in these paths: 
+  /home/stage/pin_board/app/assets/config
+  /home/stage/pin_board/app/assets/images
+  /home/stage/pin_board/app/assets/javascripts
+  /home/stage/pin_board/app/assets/stylesheets
+  /home/stage/.rvm/gems/ruby-2.5.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /home/stage/.rvm/gems/ruby-2.5.0/gems/actioncable-5.2.0/lib/assets/compiled
+  /home/stage/.rvm/gems/ruby-2.5.0/gems/activestorage-5.2.0/app/assets/javascripts
+  /home/stage/.rvm/gems/ruby-2.5.0/gems/actionview-5.2.0/lib/assets/compiled
+  /home/stage/.rvm/gems/ruby-2.5.0/gems/turbolinks-source-5.1.0/lib/assets/javascripts
+  /home/stage/pin_board/node_modules
+  /home/stage/.rvm/gems/ruby-2.5.0/gems/bootstrap-sass-3.4.1/assets/stylesheets
+  /home/stage/.rvm/gems/ruby-2.5.0/gems/bootstrap-sass-3.4.1/assets/javascripts
+  /home/stage/.rvm/gems/ruby-2.5.0/gems/bootstrap-sass-3.4.1/assets/fonts
+  /home/stage/.rvm/gems/ruby-2.5.0/gems/bootstrap-sass-3.4.1/assets/images):
+    3: %head
+    4: 	%title Pin Board
+    5: 	= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    6: 	= javascript_include_tag 'application', 'data-turbolinks-track' => true
+    7: 	= csrf_meta_tags
+    8: %body
+    9: 	%nav.navbar.navbar-default
+  
+app/assets/javascripts/application.js:13
+app/views/layouts/application.html.haml:6:in `_app_views_layouts_application_html_haml___775441309680644033_70153439435160'
+Started GET "/" for 127.0.0.1 at 2022-05-31 12:53:49 +0200
+Processing by PinsController#index as HTML
+  Rendering pins/index.html.haml within layouts/application
+  [1m[36mPin Load (0.2ms)[0m  [1m[34mSELECT "pins".* FROM "pins" ORDER BY created_at DESC[0m
+  ↳ app/views/pins/index.html.haml:2
+  Rendered pins/index.html.haml within layouts/application (3.7ms)
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (couldn't find file 'jquery' with type 'application/javascript'
+Checked in these paths: 
+  /home/stage/pin_board/app/assets/config
+  /home/stage/pin_board/app/assets/images
+  /home/stage/pin_board/app/assets/javascripts
+  /home/stage/pin_board/app/assets/stylesheets
+  /home/stage/.rvm/gems/ruby-2.5.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /home/stage/.rvm/gems/ruby-2.5.0/gems/actioncable-5.2.0/lib/assets/compiled
+  /home/stage/.rvm/gems/ruby-2.5.0/gems/activestorage-5.2.0/app/assets/javascripts
+  /home/stage/.rvm/gems/ruby-2.5.0/gems/actionview-5.2.0/lib/assets/compiled
+  /home/stage/.rvm/gems/ruby-2.5.0/gems/turbolinks-source-5.1.0/lib/assets/javascripts
+  /home/stage/pin_board/node_modules
+  /home/stage/.rvm/gems/ruby-2.5.0/gems/bootstrap-sass-3.4.1/assets/stylesheets
+  /home/stage/.rvm/gems/ruby-2.5.0/gems/bootstrap-sass-3.4.1/assets/javascripts
+  /home/stage/.rvm/gems/ruby-2.5.0/gems/bootstrap-sass-3.4.1/assets/fonts
+  /home/stage/.rvm/gems/ruby-2.5.0/gems/bootstrap-sass-3.4.1/assets/images):
+    3: %head
+    4: 	%title Pin Board
+    5: 	= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    6: 	= javascript_include_tag 'application', 'data-turbolinks-track' => true
+    7: 	= csrf_meta_tags
+    8: %body
+    9: 	%nav.navbar.navbar-default
+  
+app/assets/javascripts/application.js:13
+app/views/layouts/application.html.haml:6:in `_app_views_layouts_application_html_haml___775441309680644033_70153359011520'
+Started GET "/" for 127.0.0.1 at 2022-05-31 14:07:18 +0200
+Processing by PinsController#index as HTML
+  Rendering pins/index.html.haml within layouts/application
+  [1m[36mPin Load (1.5ms)[0m  [1m[34mSELECT "pins".* FROM "pins" ORDER BY created_at DESC[0m
+  ↳ app/views/pins/index.html.haml:2
+  Rendered pins/index.html.haml within layouts/application (4.4ms)
+Completed 500 Internal Server Error in 58ms (ActiveRecord: 1.5ms)
+
+
+  
+ActionView::Template::Error (couldn't find file 'jquery' with type 'application/javascript'
+Checked in these paths: 
+  /home/stage/pin_board/app/assets/config
+  /home/stage/pin_board/app/assets/images
+  /home/stage/pin_board/app/assets/javascripts
+  /home/stage/pin_board/app/assets/stylesheets
+  /home/stage/.rvm/gems/ruby-2.5.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /home/stage/.rvm/gems/ruby-2.5.0/gems/actioncable-5.2.0/lib/assets/compiled
+  /home/stage/.rvm/gems/ruby-2.5.0/gems/activestorage-5.2.0/app/assets/javascripts
+  /home/stage/.rvm/gems/ruby-2.5.0/gems/actionview-5.2.0/lib/assets/compiled
+  /home/stage/.rvm/gems/ruby-2.5.0/gems/turbolinks-source-5.1.0/lib/assets/javascripts
+  /home/stage/pin_board/node_modules
+  /home/stage/.rvm/gems/ruby-2.5.0/gems/bootstrap-sass-3.4.1/assets/stylesheets
+  /home/stage/.rvm/gems/ruby-2.5.0/gems/bootstrap-sass-3.4.1/assets/javascripts
+  /home/stage/.rvm/gems/ruby-2.5.0/gems/bootstrap-sass-3.4.1/assets/fonts
+  /home/stage/.rvm/gems/ruby-2.5.0/gems/bootstrap-sass-3.4.1/assets/images):
+    3: %head
+    4: 	%title Pin Board
+    5: 	= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    6: 	= javascript_include_tag 'application', 'data-turbolinks-track' => true
+    7: 	= csrf_meta_tags
+    8: %body
+    9: 	%nav.navbar.navbar-default
+  
+app/assets/javascripts/application.js:13
+app/views/layouts/application.html.haml:6:in `_app_views_layouts_application_html_haml___775441309680644033_70153360632180'
+Started GET "/" for 127.0.0.1 at 2022-05-31 14:07:20 +0200
+Processing by PinsController#index as HTML
+  Rendering pins/index.html.haml within layouts/application
+  [1m[36mPin Load (0.2ms)[0m  [1m[34mSELECT "pins".* FROM "pins" ORDER BY created_at DESC[0m
+  ↳ app/views/pins/index.html.haml:2
+  Rendered pins/index.html.haml within layouts/application (2.5ms)
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (couldn't find file 'jquery' with type 'application/javascript'
+Checked in these paths: 
+  /home/stage/pin_board/app/assets/config
+  /home/stage/pin_board/app/assets/images
+  /home/stage/pin_board/app/assets/javascripts
+  /home/stage/pin_board/app/assets/stylesheets
+  /home/stage/.rvm/gems/ruby-2.5.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /home/stage/.rvm/gems/ruby-2.5.0/gems/actioncable-5.2.0/lib/assets/compiled
+  /home/stage/.rvm/gems/ruby-2.5.0/gems/activestorage-5.2.0/app/assets/javascripts
+  /home/stage/.rvm/gems/ruby-2.5.0/gems/actionview-5.2.0/lib/assets/compiled
+  /home/stage/.rvm/gems/ruby-2.5.0/gems/turbolinks-source-5.1.0/lib/assets/javascripts
+  /home/stage/pin_board/node_modules
+  /home/stage/.rvm/gems/ruby-2.5.0/gems/bootstrap-sass-3.4.1/assets/stylesheets
+  /home/stage/.rvm/gems/ruby-2.5.0/gems/bootstrap-sass-3.4.1/assets/javascripts
+  /home/stage/.rvm/gems/ruby-2.5.0/gems/bootstrap-sass-3.4.1/assets/fonts
+  /home/stage/.rvm/gems/ruby-2.5.0/gems/bootstrap-sass-3.4.1/assets/images):
+    3: %head
+    4: 	%title Pin Board
+    5: 	= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    6: 	= javascript_include_tag 'application', 'data-turbolinks-track' => true
+    7: 	= csrf_meta_tags
+    8: %body
+    9: 	%nav.navbar.navbar-default
+  
+app/assets/javascripts/application.js:13
+app/views/layouts/application.html.haml:6:in `_app_views_layouts_application_html_haml___775441309680644033_70153368346500'
+Started GET "/" for 127.0.0.1 at 2022-05-31 14:12:30 +0200
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/stage/.rvm/gems/ruby-2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by PinsController#index as HTML
+  Rendering pins/index.html.haml within layouts/application
+  [1m[36mPin Load (0.2ms)[0m  [1m[34mSELECT "pins".* FROM "pins" ORDER BY created_at DESC[0m
+  ↳ app/views/pins/index.html.haml:2
+  Rendered pins/index.html.haml within layouts/application (51.7ms)
+  [1m[36mUser Load (27.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.haml:13
+Completed 200 OK in 2389ms (Views: 2329.0ms | ActiveRecord: 28.3ms)
+
+
+Started GET "/users/edit" for 127.0.0.1 at 2022-05-31 14:12:56 +0200
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/stage/.rvm/gems/ruby-2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/registrations/edit.html.erb within layouts/application (282.4ms)
+Completed 200 OK in 364ms (Views: 361.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-31 14:13:03 +0200
+Processing by PinsController#index as HTML
+  Rendering pins/index.html.haml within layouts/application
+  [1m[36mPin Load (0.2ms)[0m  [1m[34mSELECT "pins".* FROM "pins" ORDER BY created_at DESC[0m
+  ↳ app/views/pins/index.html.haml:2
+  Rendered pins/index.html.haml within layouts/application (5.5ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.haml:13
+Completed 200 OK in 83ms (Views: 81.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-31 14:13:18 +0200
+Processing by PinsController#index as HTML
+  Rendering pins/index.html.haml within layouts/application
+  [1m[36mPin Load (0.2ms)[0m  [1m[34mSELECT "pins".* FROM "pins" ORDER BY created_at DESC[0m
+  ↳ app/views/pins/index.html.haml:2
+  Rendered pins/index.html.haml within layouts/application (4.1ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.haml:13
+Completed 200 OK in 69ms (Views: 67.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-31 14:14:25 +0200
+Processing by PinsController#index as HTML
+  Rendering pins/index.html.haml within layouts/application
+  [1m[36mPin Load (0.4ms)[0m  [1m[34mSELECT "pins".* FROM "pins" ORDER BY created_at DESC[0m
+  ↳ app/views/pins/index.html.haml:1
+  Rendered pins/index.html.haml within layouts/application (5.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.haml:13
+Completed 200 OK in 50ms (Views: 47.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/pins/new" for 127.0.0.1 at 2022-05-31 14:14:36 +0200
+Processing by PinsController#new as HTML
+  Rendering pins/new.html.haml within layouts/application
+  Rendered pins/_form.html.haml (8.7ms)
+  Rendered pins/new.html.haml within layouts/application (11.6ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.haml:13
+Completed 200 OK in 67ms (Views: 64.9ms | ActiveRecord: 0.2ms)
+
+
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/stage/.rvm/gems/ruby-2.5.0/bin/rake:23
+Migrating to AddAttachmentImageToPins (20220531123146)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/stage/.rvm/gems/ruby-2.5.0/bin/rake:23
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "pins" ADD "image_file_name" varchar[0m
+  ↳ db/migrate/20220531123146_add_attachment_image_to_pins.rb:4
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "pins" ADD "image_content_type" varchar[0m
+  ↳ db/migrate/20220531123146_add_attachment_image_to_pins.rb:4
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "pins" ADD "image_file_size" bigint[0m
+  ↳ db/migrate/20220531123146_add_attachment_image_to_pins.rb:4
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "pins" ADD "image_updated_at" datetime[0m
+  ↳ db/migrate/20220531123146_add_attachment_image_to_pins.rb:4
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20220531123146"]]
+  ↳ /home/stage/.rvm/gems/ruby-2.5.0/bin/rake:23
+  [1m[35m (100.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/stage/.rvm/gems/ruby-2.5.0/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /home/stage/.rvm/gems/ruby-2.5.0/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/stage/.rvm/gems/ruby-2.5.0/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/stage/.rvm/gems/ruby-2.5.0/bin/rake:23
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/stage/.rvm/gems/ruby-2.5.0/bin/rake:23
+Started GET "/pins/new" for 127.0.0.1 at 2022-05-31 14:34:17 +0200
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/stage/.rvm/gems/ruby-2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by PinsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pins_controller.rb:12
+  Rendering pins/new.html.haml within layouts/application
+  Rendered pins/_form.html.haml (387.8ms)
+  Rendered pins/new.html.haml within layouts/application (404.9ms)
+Completed 200 OK in 1097ms (Views: 935.8ms | ActiveRecord: 1.9ms)
+
+
+Started POST "/pins" for 127.0.0.1 at 2022-05-31 14:35:26 +0200
+Processing by PinsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"X1Zt3ljs9+wdnImINzuLL3XqPZD2L+HXjj8Gi2SK7iliQDMsCfOANOxXzFbdY0GRa7YtS3hUTtX5R/xa13FO/g==", "pin"=>{"image"=>#<ActionDispatch::Http::UploadedFile:0x00007f454cec1d30 @tempfile=#<Tempfile:/tmp/RackMultipart20220531-12384-1834a6g.jpg>, @original_filename="vallesabbia.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"pin[image]\"; filename=\"vallesabbia.jpg\"\r\nContent-Type: image/jpeg\r\n">, "title"=>"vallesabbia", "description"=>"Valle ricca di paesaggi naturali"}, "commit"=>"Create Pin"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pins_controller.rb:16
+[paperclip] Trying to link /tmp/RackMultipart20220531-12384-1834a6g.jpg to /tmp/3d908206d6bbae63a94d4b9aee572d3920220531-12384-xb94mv.jpg
+[paperclip] Trying to link /tmp/3d908206d6bbae63a94d4b9aee572d3920220531-12384-xb94mv.jpg to /tmp/3d908206d6bbae63a94d4b9aee572d3920220531-12384-1dhs1yv.jpg
+Command :: file -b --mime '/tmp/3d908206d6bbae63a94d4b9aee572d3920220531-12384-1dhs1yv.jpg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/3d908206d6bbae63a94d4b9aee572d3920220531-12384-xb94mv.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/tmp/3d908206d6bbae63a94d4b9aee572d3920220531-12384-xb94mv.jpg[0]'
+Command :: convert '/tmp/3d908206d6bbae63a94d4b9aee572d3920220531-12384-xb94mv.jpg[0]' -auto-orient -resize "300x300>" '/tmp/727f9ad8618626a9b14fb0190366e92220220531-12384-1t7dufe'
+[paperclip] Trying to link /tmp/727f9ad8618626a9b14fb0190366e92220220531-12384-1t7dufe to /tmp/4a5c36c97215dc222e69842005dbad6520220531-12384-5lo0fs
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/pins_controller.rb:17
+[paperclip] Trying to link /tmp/3d908206d6bbae63a94d4b9aee572d3920220531-12384-xb94mv.jpg to /tmp/3d908206d6bbae63a94d4b9aee572d3920220531-12384-53x5ph.jpg
+Command :: file -b --mime '/tmp/3d908206d6bbae63a94d4b9aee572d3920220531-12384-53x5ph.jpg'
+  [1m[36mPin Create (0.5ms)[0m  [1m[32mINSERT INTO "pins" ("title", "description", "created_at", "updated_at", "user_id", "image_file_name", "image_content_type", "image_file_size", "image_updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "vallesabbia"], ["description", "Valle ricca di paesaggi naturali"], ["created_at", "2022-05-31 12:35:26.735671"], ["updated_at", "2022-05-31 12:35:26.735671"], ["user_id", 1], ["image_file_name", "vallesabbia.jpg"], ["image_content_type", "image/jpeg"], ["image_file_size", 20902], ["image_updated_at", "2022-05-31 12:35:26.187318"]]
+  ↳ app/controllers/pins_controller.rb:17
+  [1m[35m (122.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/pins_controller.rb:17
+Redirected to http://localhost:3000/pins/3
+Completed 302 Found in 686ms (ActiveRecord: 123.7ms)
+
+
+Started GET "/pins/3" for 127.0.0.1 at 2022-05-31 14:35:26 +0200
+Processing by PinsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mPin Load (0.4ms)[0m  [1m[34mSELECT  "pins".* FROM "pins" WHERE "pins"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/pins_controller.rb:47
+  Rendering pins/show.html.haml within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/pins/show.html.haml:6
+  Rendered pins/show.html.haml within layouts/application (4.5ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.haml:13
+Completed 200 OK in 100ms (Views: 94.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/pins/3" for 127.0.0.1 at 2022-05-31 14:37:05 +0200
+Processing by PinsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mPin Load (0.1ms)[0m  [1m[34mSELECT  "pins".* FROM "pins" WHERE "pins"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/pins_controller.rb:47
+  Rendering pins/show.html.haml within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/pins/show.html.haml:6
+  Rendered pins/show.html.haml within layouts/application (5.5ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.haml:13
+Completed 200 OK in 79ms (Views: 76.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/pins/new" for 127.0.0.1 at 2022-05-31 14:37:08 +0200
+Processing by PinsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pins_controller.rb:12
+  Rendering pins/new.html.haml within layouts/application
+  Rendered pins/_form.html.haml (12.5ms)
+  Rendered pins/new.html.haml within layouts/application (15.4ms)
+Completed 200 OK in 61ms (Views: 57.4ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/pins" for 127.0.0.1 at 2022-05-31 14:37:23 +0200
+Processing by PinsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mq3d7gtHIkwc4PJJ2bLW5ueqDbOE1XYW5MAETdtPa15kzEWWbspqmMFFBmqkTNpzRFuzw2LU7wPAbCfRFupFPA==", "pin"=>{"image"=>#<ActionDispatch::Http::UploadedFile:0x00007f454cc969c0 @tempfile=#<Tempfile:/tmp/RackMultipart20220531-12384-16h9ql6.jpg>, @original_filename="balsamiavulgaris.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"pin[image]\"; filename=\"balsamiavulgaris.jpg\"\r\nContent-Type: image/jpeg\r\n">, "title"=>"reueru", "description"=>"wtyey"}, "commit"=>"Create Pin"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pins_controller.rb:16
+[paperclip] Trying to link /tmp/RackMultipart20220531-12384-16h9ql6.jpg to /tmp/c5f06958285405b588638655097e6d4820220531-12384-nhdv7m.jpg
+[paperclip] Trying to link /tmp/c5f06958285405b588638655097e6d4820220531-12384-nhdv7m.jpg to /tmp/c5f06958285405b588638655097e6d4820220531-12384-a1qw2u.jpg
+Command :: file -b --mime '/tmp/c5f06958285405b588638655097e6d4820220531-12384-a1qw2u.jpg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/c5f06958285405b588638655097e6d4820220531-12384-nhdv7m.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/tmp/c5f06958285405b588638655097e6d4820220531-12384-nhdv7m.jpg[0]'
+Command :: convert '/tmp/c5f06958285405b588638655097e6d4820220531-12384-nhdv7m.jpg[0]' -auto-orient -resize "300x300>" '/tmp/6d59e3908da095cb0e0505199713461320220531-12384-1wpxuqm'
+[paperclip] Trying to link /tmp/6d59e3908da095cb0e0505199713461320220531-12384-1wpxuqm to /tmp/7bc734b0ddbc264fc66c129a1dfee58920220531-12384-1sa333k
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/pins_controller.rb:17
+[paperclip] Trying to link /tmp/c5f06958285405b588638655097e6d4820220531-12384-nhdv7m.jpg to /tmp/c5f06958285405b588638655097e6d4820220531-12384-qvmou6.jpg
+Command :: file -b --mime '/tmp/c5f06958285405b588638655097e6d4820220531-12384-qvmou6.jpg'
+  [1m[36mPin Create (1.4ms)[0m  [1m[32mINSERT INTO "pins" ("title", "description", "created_at", "updated_at", "user_id", "image_file_name", "image_content_type", "image_file_size", "image_updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "reueru"], ["description", "wtyey"], ["created_at", "2022-05-31 12:37:23.055406"], ["updated_at", "2022-05-31 12:37:23.055406"], ["user_id", 1], ["image_file_name", "balsamiavulgaris.jpg"], ["image_content_type", "image/jpeg"], ["image_file_size", 35960], ["image_updated_at", "2022-05-31 12:37:23.007718"]]
+  ↳ app/controllers/pins_controller.rb:17
+  [1m[35m (189.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/pins_controller.rb:17
+Redirected to http://localhost:3000/pins/4
+Completed 302 Found in 251ms (ActiveRecord: 191.0ms)
+
+
+Started GET "/pins/4" for 127.0.0.1 at 2022-05-31 14:37:23 +0200
+Processing by PinsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mPin Load (0.2ms)[0m  [1m[34mSELECT  "pins".* FROM "pins" WHERE "pins"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/pins_controller.rb:47
+  Rendering pins/show.html.haml within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/pins/show.html.haml:6
+  Rendered pins/show.html.haml within layouts/application (3.9ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.haml:13
+Completed 200 OK in 61ms (Views: 58.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-31 14:37:31 +0200
+Processing by PinsController#index as HTML
+  Rendering pins/index.html.haml within layouts/application
+  [1m[36mPin Load (0.3ms)[0m  [1m[34mSELECT "pins".* FROM "pins" ORDER BY created_at DESC[0m
+  ↳ app/views/pins/index.html.haml:1
+  Rendered pins/index.html.haml within layouts/application (6.5ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.haml:13
+Completed 200 OK in 59ms (Views: 56.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/images/medium/missing.png" for 127.0.0.1 at 2022-05-31 14:37:32 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/images/medium/missing.png"):
+  
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/pins/1" for 127.0.0.1 at 2022-05-31 14:37:36 +0200
+Processing by PinsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPin Load (0.2ms)[0m  [1m[34mSELECT  "pins".* FROM "pins" WHERE "pins"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pins_controller.rb:47
+  Rendering pins/show.html.haml within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/pins/show.html.haml:6
+  Rendered pins/show.html.haml within layouts/application (12.6ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.haml:13
+Completed 200 OK in 71ms (Views: 65.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/images/medium/missing.png" for 127.0.0.1 at 2022-05-31 14:37:36 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/images/medium/missing.png"):
+  
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/pins/1/edit" for 127.0.0.1 at 2022-05-31 14:37:38 +0200
+Processing by PinsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPin Load (0.2ms)[0m  [1m[34mSELECT  "pins".* FROM "pins" WHERE "pins"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pins_controller.rb:47
+  [1m[36mCACHE Pin Load (0.0ms)[0m  [1m[34mSELECT  "pins".* FROM "pins" WHERE "pins"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pins_controller.rb:25
+  Rendering pins/edit.html.haml within layouts/application
+  Rendered pins/_form.html.haml (12.8ms)
+  Rendered pins/edit.html.haml within layouts/application (17.1ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.haml:13
+Completed 200 OK in 68ms (Views: 64.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/images/medium/missing.png" for 127.0.0.1 at 2022-05-31 14:37:38 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/images/medium/missing.png"):
+  
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started PATCH "/pins/1" for 127.0.0.1 at 2022-05-31 14:37:48 +0200
+Processing by PinsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"m619umgda3RK8pWZ8D0nh/G9jAfh+e8o2TioCVqofqvfBH+lX6oO/Jmlgo9PjrsM83qlfbCRTOQdANOVqxGjEA==", "pin"=>{"image"=>#<ActionDispatch::Http::UploadedFile:0x00007f4538553528 @tempfile=#<Tempfile:/tmp/RackMultipart20220531-12384-2kylvr.jpg>, @original_filename="roevolciano.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"pin[image]\"; filename=\"roevolciano.jpg\"\r\nContent-Type: image/jpeg\r\n">, "title"=>"ciao", "description"=>"wedfew"}, "commit"=>"Update Pin", "id"=>"1"}
+  [1m[36mPin Load (0.2ms)[0m  [1m[34mSELECT  "pins".* FROM "pins" WHERE "pins"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pins_controller.rb:47
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/pins_controller.rb:29
+[paperclip] Trying to link /tmp/RackMultipart20220531-12384-2kylvr.jpg to /tmp/41e972e30ced5e12d0de4a447cac934620220531-12384-1gf8xlk.jpg
+[paperclip] Trying to link /tmp/41e972e30ced5e12d0de4a447cac934620220531-12384-1gf8xlk.jpg to /tmp/41e972e30ced5e12d0de4a447cac934620220531-12384-9nmh5c.jpg
+Command :: file -b --mime '/tmp/41e972e30ced5e12d0de4a447cac934620220531-12384-9nmh5c.jpg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/41e972e30ced5e12d0de4a447cac934620220531-12384-1gf8xlk.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/tmp/41e972e30ced5e12d0de4a447cac934620220531-12384-1gf8xlk.jpg[0]'
+Command :: convert '/tmp/41e972e30ced5e12d0de4a447cac934620220531-12384-1gf8xlk.jpg[0]' -auto-orient -resize "300x300>" '/tmp/9324be3d1bc36591feadbaa66b150d0220220531-12384-15crn66'
+[paperclip] Trying to link /tmp/9324be3d1bc36591feadbaa66b150d0220220531-12384-15crn66 to /tmp/780f60ba69edef1cb3ddd53d9d3b6bff20220531-12384-1baee1n
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pins_controller.rb:29
+[paperclip] Trying to link /tmp/41e972e30ced5e12d0de4a447cac934620220531-12384-1gf8xlk.jpg to /tmp/41e972e30ced5e12d0de4a447cac934620220531-12384-1cz7bg1.jpg
+Command :: file -b --mime '/tmp/41e972e30ced5e12d0de4a447cac934620220531-12384-1cz7bg1.jpg'
+  [1m[36mPin Update (0.8ms)[0m  [1m[33mUPDATE "pins" SET "image_file_name" = ?, "image_content_type" = ?, "image_file_size" = ?, "image_updated_at" = ?, "updated_at" = ? WHERE "pins"."id" = ?[0m  [["image_file_name", "roevolciano.jpg"], ["image_content_type", "image/jpeg"], ["image_file_size", 44212], ["image_updated_at", "2022-05-31 12:37:48.703490"], ["updated_at", "2022-05-31 12:37:48.744837"], ["id", 1]]
+  ↳ app/controllers/pins_controller.rb:29
+  [1m[35m (96.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/pins_controller.rb:29
+Redirected to http://localhost:3000/pins/1
+Completed 302 Found in 151ms (ActiveRecord: 97.9ms)
+
+
+Started GET "/pins/1" for 127.0.0.1 at 2022-05-31 14:37:48 +0200
+Processing by PinsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPin Load (0.1ms)[0m  [1m[34mSELECT  "pins".* FROM "pins" WHERE "pins"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pins_controller.rb:47
+  Rendering pins/show.html.haml within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/pins/show.html.haml:6
+  Rendered pins/show.html.haml within layouts/application (4.1ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.haml:13
+Completed 200 OK in 53ms (Views: 51.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/pins/new" for 127.0.0.1 at 2022-05-31 14:37:52 +0200
+Processing by PinsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pins_controller.rb:12
+  Rendering pins/new.html.haml within layouts/application
+  Rendered pins/_form.html.haml (9.0ms)
+  Rendered pins/new.html.haml within layouts/application (12.0ms)
+Completed 200 OK in 77ms (Views: 74.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-31 14:37:55 +0200
+Processing by PinsController#index as HTML
+  Rendering pins/index.html.haml within layouts/application
+  [1m[36mPin Load (0.2ms)[0m  [1m[34mSELECT "pins".* FROM "pins" ORDER BY created_at DESC[0m
+  ↳ app/views/pins/index.html.haml:1
+  Rendered pins/index.html.haml within layouts/application (5.7ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.haml:13
+Completed 200 OK in 60ms (Views: 58.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-31 14:38:57 +0200
+Processing by PinsController#index as HTML
+  Rendering pins/index.html.haml within layouts/application
+  [1m[36mPin Load (0.3ms)[0m  [1m[34mSELECT "pins".* FROM "pins" ORDER BY created_at DESC[0m
+  ↳ app/views/pins/index.html.haml:1
+  Rendered pins/index.html.haml within layouts/application (4.7ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.haml:13
+Completed 200 OK in 52ms (Views: 50.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/pins/3" for 127.0.0.1 at 2022-05-31 14:38:59 +0200
+Processing by PinsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mPin Load (0.2ms)[0m  [1m[34mSELECT  "pins".* FROM "pins" WHERE "pins"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/pins_controller.rb:47
+  Rendering pins/show.html.haml within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/pins/show.html.haml:6
+  Rendered pins/show.html.haml within layouts/application (6.3ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.haml:13
+Completed 200 OK in 61ms (Views: 58.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/pins/3/edit" for 127.0.0.1 at 2022-05-31 14:39:01 +0200
+Processing by PinsController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mPin Load (0.1ms)[0m  [1m[34mSELECT  "pins".* FROM "pins" WHERE "pins"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/pins_controller.rb:47
+  [1m[36mCACHE Pin Load (0.0ms)[0m  [1m[34mSELECT  "pins".* FROM "pins" WHERE "pins"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/pins_controller.rb:25
+  Rendering pins/edit.html.haml within layouts/application
+  Rendered pins/_form.html.haml (11.6ms)
+  Rendered pins/edit.html.haml within layouts/application (15.7ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.haml:13
+Completed 200 OK in 67ms (Views: 64.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/pins/3/edit" for 127.0.0.1 at 2022-05-31 14:42:22 +0200
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/stage/.rvm/gems/ruby-2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by PinsController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mPin Load (0.3ms)[0m  [1m[34mSELECT  "pins".* FROM "pins" WHERE "pins"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/pins_controller.rb:47
+  [1m[36mCACHE Pin Load (0.0ms)[0m  [1m[34mSELECT  "pins".* FROM "pins" WHERE "pins"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/pins_controller.rb:25
+  Rendering pins/edit.html.haml within layouts/application
+  Rendered pins/_form.html.haml (33.1ms)
+  Rendered pins/edit.html.haml within layouts/application (37.6ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.haml:13
+Completed 200 OK in 3642ms (Views: 3614.5ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-31 14:42:33 +0200
+Processing by PinsController#index as HTML
+  Rendering pins/index.html.haml within layouts/application
+  Rendered pins/index.html.haml within layouts/application (5.9ms)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/stage/pin_board/app/views/pins/index.html.haml:10: syntax error, unexpected end-of-input, expecting keyword_end
+          end
+             ^):
+  
+app/views/pins/index.html.haml:10: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/" for 127.0.0.1 at 2022-05-31 14:43:12 +0200
+Processing by PinsController#index as HTML
+  Rendering pins/index.html.haml within layouts/application
+  [1m[36mPin Load (0.2ms)[0m  [1m[34mSELECT "pins".* FROM "pins" ORDER BY created_at DESC[0m
+  ↳ app/views/pins/index.html.haml:2
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/pins/index.html.haml:9
+  Rendered pins/index.html.haml within layouts/application (28.4ms)
+Completed 500 Internal Server Error in 33ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::Template::Error (undefined method `emai' for #<User:0x00007f69c5df2ab0>
+Did you mean?  email):
+    6: 				%h2= link_to pin.title, pin
+    7: 				%p.user
+    8: 				Submitted by
+    9: 				= pin.user.emai
+  
+app/views/pins/index.html.haml:9:in `block in _app_views_pins_index_html_haml___3334259046046700844_70046136756760'
+app/views/pins/index.html.haml:2:in `_app_views_pins_index_html_haml___3334259046046700844_70046136756760'
+Started GET "/" for 127.0.0.1 at 2022-05-31 14:43:21 +0200
+Processing by PinsController#index as HTML
+  Rendering pins/index.html.haml within layouts/application
+  [1m[36mPin Load (0.2ms)[0m  [1m[34mSELECT "pins".* FROM "pins" ORDER BY created_at DESC[0m
+  ↳ app/views/pins/index.html.haml:2
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/pins/index.html.haml:9
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/pins/index.html.haml:9
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/pins/index.html.haml:9
+  Rendered pins/index.html.haml within layouts/application (11.2ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.haml:13
+Completed 200 OK in 67ms (Views: 64.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-31 14:47:17 +0200
+Processing by PinsController#index as HTML
+  Rendering pins/index.html.haml within layouts/application
+  [1m[36mPin Load (0.3ms)[0m  [1m[34mSELECT "pins".* FROM "pins" ORDER BY created_at DESC[0m
+  ↳ app/views/pins/index.html.haml:2
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/pins/index.html.haml:9
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/pins/index.html.haml:9
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/pins/index.html.haml:9
+  Rendered pins/index.html.haml within layouts/application (10.4ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.haml:13
+Completed 200 OK in 1437ms (Views: 1434.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/pins/4" for 127.0.0.1 at 2022-05-31 14:47:22 +0200
+Processing by PinsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mPin Load (0.1ms)[0m  [1m[34mSELECT  "pins".* FROM "pins" WHERE "pins"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/pins_controller.rb:47
+  Rendering pins/show.html.haml within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/pins/show.html.haml:6
+  Rendered pins/show.html.haml within layouts/application (5.5ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.haml:13
+Completed 200 OK in 105ms (Views: 102.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-31 14:47:25 +0200
+Processing by PinsController#index as HTML
+  Rendering pins/index.html.haml within layouts/application
+  [1m[36mPin Load (0.3ms)[0m  [1m[34mSELECT "pins".* FROM "pins" ORDER BY created_at DESC[0m
+  ↳ app/views/pins/index.html.haml:2
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/pins/index.html.haml:9
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/pins/index.html.haml:9
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/pins/index.html.haml:9
+  Rendered pins/index.html.haml within layouts/application (20.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.haml:13
+Completed 200 OK in 96ms (Views: 92.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/pins/4" for 127.0.0.1 at 2022-05-31 14:50:30 +0200
+Started GET "/pins/4" for 127.0.0.1 at 2022-05-31 14:50:30 +0200
+Processing by PinsController#show as HTML
+Processing by PinsController#show as HTML
+  Parameters: {"id"=>"4"}
+  Parameters: {"id"=>"4"}
+  [1m[36mPin Load (0.1ms)[0m  [1m[34mSELECT  "pins".* FROM "pins" WHERE "pins"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mPin Load (0.2ms)[0m  [1m[34mSELECT  "pins".* FROM "pins" WHERE "pins"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/pins_controller.rb:47
+  ↳ app/controllers/pins_controller.rb:47
+  Rendering pins/show.html.haml within layouts/application
+  Rendering pins/show.html.haml within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/pins/show.html.haml:14
+  Rendered pins/show.html.haml within layouts/application (7.9ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/pins/show.html.haml:14
+  Rendered pins/show.html.haml within layouts/application (6.6ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.haml:13
+Completed 200 OK in 183ms (Views: 179.6ms | ActiveRecord: 0.6ms)
+
+
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.haml:13
+Completed 200 OK in 192ms (Views: 187.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-31 14:50:35 +0200
+Processing by PinsController#index as HTML
+Started GET "/" for 127.0.0.1 at 2022-05-31 14:50:35 +0200
+Processing by PinsController#index as HTML
+  Rendering pins/index.html.haml within layouts/application
+  [1m[36mPin Load (0.2ms)[0m  [1m[34mSELECT "pins".* FROM "pins" ORDER BY created_at DESC[0m
+  ↳ app/views/pins/index.html.haml:2
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Started GET "/" for 127.0.0.1 at 2022-05-31 14:50:35 +0200
+  Rendering pins/index.html.haml within layouts/application
+  [1m[36mPin Load (0.2ms)[0m  [1m[34mSELECT "pins".* FROM "pins" ORDER BY created_at DESC[0m
+  ↳ app/views/pins/index.html.haml:2
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/pins/index.html.haml:9
+Processing by PinsController#index as HTML
+  ↳ app/views/pins/index.html.haml:9
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/pins/index.html.haml:9
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering pins/index.html.haml within layouts/application
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/pins/index.html.haml:9
+  ↳ app/views/pins/index.html.haml:9
+  Rendered pins/index.html.haml within layouts/application (12.3ms)
+  [1m[36mPin Load (0.2ms)[0m  [1m[34mSELECT "pins".* FROM "pins" ORDER BY created_at DESC[0m
+  ↳ app/views/pins/index.html.haml:2
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/pins/index.html.haml:9
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/pins/index.html.haml:9
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/pins/index.html.haml:9
+  Rendered pins/index.html.haml within layouts/application (11.7ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/pins/index.html.haml:9
+  Rendered pins/index.html.haml within layouts/application (34.8ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.haml:13
+Completed 200 OK in 231ms (Views: 228.2ms | ActiveRecord: 0.7ms)
+
+
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.haml:13
+  ↳ app/views/layouts/application.html.haml:13
+Completed 200 OK in 264ms (Views: 250.6ms | ActiveRecord: 0.7ms)
+
+
+Completed 200 OK in 262ms (Views: 259.0ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/pins/3" for 127.0.0.1 at 2022-05-31 14:50:47 +0200
+Processing by PinsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mPin Load (0.3ms)[0m  [1m[34mSELECT  "pins".* FROM "pins" WHERE "pins"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/pins_controller.rb:47
+  Rendering pins/show.html.haml within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/pins/show.html.haml:14
+  Rendered pins/show.html.haml within layouts/application (12.7ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.haml:13
+Completed 200 OK in 71ms (Views: 68.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-31 14:50:51 +0200
+Processing by PinsController#index as HTML
+Started GET "/" for 127.0.0.1 at 2022-05-31 14:50:51 +0200
+Started GET "/" for 127.0.0.1 at 2022-05-31 14:50:51 +0200
+Processing by PinsController#index as HTML
+  Rendering pins/index.html.haml within layouts/application
+  [1m[36mPin Load (0.2ms)[0m  [1m[34mSELECT "pins".* FROM "pins" ORDER BY created_at DESC[0m
+Processing by PinsController#index as HTML
+  Rendering pins/index.html.haml within layouts/application
+Started GET "/" for 127.0.0.1 at 2022-05-31 14:50:51 +0200
+  ↳ app/views/pins/index.html.haml:2
+Started GET "/" for 127.0.0.1 at 2022-05-31 14:50:51 +0200
+  [1m[36mPin Load (0.3ms)[0m  [1m[34mSELECT "pins".* FROM "pins" ORDER BY created_at DESC[0m
+  Rendering pins/index.html.haml within layouts/application
+Processing by PinsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Processing by PinsController#index as HTML
+  ↳ app/views/pins/index.html.haml:2
+  Rendering pins/index.html.haml within layouts/application
+  [1m[36mPin Load (0.2ms)[0m  [1m[34mSELECT "pins".* FROM "pins" ORDER BY created_at DESC[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/pins/index.html.haml:9
+  ↳ app/views/pins/index.html.haml:9
+  ↳ app/views/pins/index.html.haml:2
+  Rendering pins/index.html.haml within layouts/application
+  [1m[36mPin Load (0.3ms)[0m  [1m[34mSELECT "pins".* FROM "pins" ORDER BY created_at DESC[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPin Load (0.2ms)[0m  [1m[34mSELECT "pins".* FROM "pins" ORDER BY created_at DESC[0m
+  ↳ app/views/pins/index.html.haml:2
+  ↳ app/views/pins/index.html.haml:9
+  ↳ app/views/pins/index.html.haml:9
+  ↳ app/views/pins/index.html.haml:9
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/pins/index.html.haml:9
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/pins/index.html.haml:9
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/pins/index.html.haml:2
+  ↳ app/views/pins/index.html.haml:9
+  ↳ app/views/pins/index.html.haml:9
+  Rendered pins/index.html.haml within layouts/application (25.3ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/pins/index.html.haml:9
+  Rendered pins/index.html.haml within layouts/application (46.3ms)
+  ↳ app/views/pins/index.html.haml:9
+  ↳ app/views/pins/index.html.haml:9
+  Rendered pins/index.html.haml within layouts/application (52.0ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/pins/index.html.haml:9
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/pins/index.html.haml:9
+  ↳ app/views/pins/index.html.haml:9
+  Rendered pins/index.html.haml within layouts/application (38.0ms)
+  Rendered pins/index.html.haml within layouts/application (47.1ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.haml:13
+Completed 200 OK in 377ms (Views: 374.6ms | ActiveRecord: 0.8ms)
+
+
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.haml:13
+Completed 200 OK in 417ms (Views: 415.1ms | ActiveRecord: 0.8ms)
+
+
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.haml:13
+Completed 200 OK in 454ms (Views: 442.2ms | ActiveRecord: 0.9ms)
+
+
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.haml:13
+Completed 200 OK in 423ms (Views: 418.0ms | ActiveRecord: 0.7ms)
+
+
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.haml:13
+Completed 200 OK in 447ms (Views: 444.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/pins/new" for 127.0.0.1 at 2022-05-31 14:50:56 +0200
+Processing by PinsController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pins_controller.rb:12
+  Rendering pins/new.html.haml within layouts/application
+  Rendered pins/_form.html.haml (9.5ms)
+  Rendered pins/new.html.haml within layouts/application (12.9ms)
+Completed 200 OK in 204ms (Views: 65.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/pins/new" for 127.0.0.1 at 2022-05-31 14:51:02 +0200
+Processing by PinsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pins_controller.rb:12
+  Rendering pins/new.html.haml within layouts/application
+  Rendered pins/_form.html.haml (9.7ms)
+  Rendered pins/new.html.haml within layouts/application (13.0ms)
+Completed 200 OK in 78ms (Views: 75.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/pins/new" for 127.0.0.1 at 2022-05-31 14:51:03 +0200
+Processing by PinsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pins_controller.rb:12
+  Rendering pins/new.html.haml within layouts/application
+  Rendered pins/_form.html.haml (9.9ms)
+  Rendered pins/new.html.haml within layouts/application (14.6ms)
+Completed 200 OK in 72ms (Views: 68.9ms | ActiveRecord: 0.2ms)
+
+
