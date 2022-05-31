@@ -2,9 +2,9 @@
     .row
         .panel.panel-default
             .panel-heading
-                %h1 Edit Your Pin
+                %h1 Modifica il tuo Pin
             .panel-body
                 .current_image
-                    %strong.center Current Image
+                    %strong.center Immagine corrente
                     = image_tag @pin.image.url(:medium)
                 = render 'form'
