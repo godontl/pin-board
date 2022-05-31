@@ -2119,3 +2119,393 @@ Processing by PinsController#new as HTML
 Completed 200 OK in 72ms (Views: 68.9ms | ActiveRecord: 0.2ms)
 
 
+Started GET "/pins/new" for 127.0.0.1 at 2022-05-31 15:20:53 +0200
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/stage/.rvm/gems/ruby-2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by PinsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pins_controller.rb:12
+  Rendering pins/new.html.haml within layouts/application
+  Rendered pins/_form.html.haml (62.9ms)
+  Rendered pins/new.html.haml within layouts/application (68.4ms)
+Completed 200 OK in 712ms (Views: 674.0ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-31 15:20:56 +0200
+Processing by PinsController#index as HTML
+  Rendering pins/index.html.haml within layouts/application
+  [1m[36mPin Load (0.3ms)[0m  [1m[34mSELECT "pins".* FROM "pins" ORDER BY created_at DESC[0m
+  ↳ app/views/pins/index.html.haml:2
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/pins/index.html.haml:9
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/pins/index.html.haml:9
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/pins/index.html.haml:9
+  Rendered pins/index.html.haml within layouts/application (26.3ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.haml:13
+Completed 200 OK in 111ms (Views: 107.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/pins/3" for 127.0.0.1 at 2022-05-31 15:21:10 +0200
+Processing by PinsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mPin Load (0.3ms)[0m  [1m[34mSELECT  "pins".* FROM "pins" WHERE "pins"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/pins_controller.rb:47
+  Rendering pins/show.html.haml within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/pins/show.html.haml:14
+  Rendered pins/show.html.haml within layouts/application (11.9ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.haml:13
+Completed 200 OK in 131ms (Views: 127.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-31 15:21:14 +0200
+Processing by PinsController#index as HTML
+  Rendering pins/index.html.haml within layouts/application
+Started GET "/" for 127.0.0.1 at 2022-05-31 15:21:14 +0200
+  [1m[36mPin Load (0.2ms)[0m  [1m[34mSELECT "pins".* FROM "pins" ORDER BY created_at DESC[0m
+  ↳ app/views/pins/index.html.haml:2
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Processing by PinsController#index as HTML
+  ↳ app/views/pins/index.html.haml:9
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/pins/index.html.haml:9
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/pins/index.html.haml:9
+  Rendered pins/index.html.haml within layouts/application (15.1ms)
+  Rendering pins/index.html.haml within layouts/application
+  [1m[36mPin Load (0.2ms)[0m  [1m[34mSELECT "pins".* FROM "pins" ORDER BY created_at DESC[0m
+  ↳ app/views/pins/index.html.haml:2
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/pins/index.html.haml:9
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/pins/index.html.haml:9
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/pins/index.html.haml:9
+  Rendered pins/index.html.haml within layouts/application (6.7ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.haml:13
+Completed 200 OK in 150ms (Views: 148.4ms | ActiveRecord: 0.7ms)
+
+
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.haml:13
+Completed 200 OK in 181ms (Views: 177.1ms | ActiveRecord: 0.8ms)
+
+
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/stage/.rvm/gems/ruby-2.5.0/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /home/stage/.rvm/gems/ruby-2.5.0/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/stage/.rvm/gems/ruby-2.5.0/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/stage/.rvm/gems/ruby-2.5.0/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/stage/.rvm/gems/ruby-2.5.0/bin/rake:23
+Started GET "/" for 127.0.0.1 at 2022-05-31 15:33:53 +0200
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/stage/.rvm/gems/ruby-2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by PinsController#index as HTML
+  Rendering pins/index.html.haml within layouts/application
+  [1m[36mPin Load (0.2ms)[0m  [1m[34mSELECT "pins".* FROM "pins" ORDER BY created_at DESC[0m
+  ↳ app/views/pins/index.html.haml:2
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/pins/index.html.haml:9
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/pins/index.html.haml:9
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/pins/index.html.haml:9
+  Rendered pins/index.html.haml within layouts/application (35.8ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.haml:13
+Completed 200 OK in 405ms (Views: 364.5ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/pins/3" for 127.0.0.1 at 2022-05-31 15:33:58 +0200
+Processing by PinsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mPin Load (0.4ms)[0m  [1m[34mSELECT  "pins".* FROM "pins" WHERE "pins"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/pins_controller.rb:52
+  Rendering pins/show.html.haml within layouts/application
+  Rendered pins/show.html.haml within layouts/application (2.9ms)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (The line was indented 2 levels deeper than the previous line.):
+    15:      .col-md-6
+    16:       .btn-group.pull-right
+    17:       =link_to like_pin_path(@pin), method: :put, class: "btn btn-default" do
+    18:         %span.glyphicon.glyphicon-heart
+    19:          = @pin.get_upvotes.size
+    20:        =link_to "Edit", edit_pin_path, class: "btn btn-default"
+    21:        =link_to "Delete", pin_path, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-default"
+  
+app/views/pins/show.html.haml:18
+Started GET "/pins/3" for 127.0.0.1 at 2022-05-31 15:36:26 +0200
+Processing by PinsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mPin Load (0.1ms)[0m  [1m[34mSELECT  "pins".* FROM "pins" WHERE "pins"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/pins_controller.rb:52
+  Rendering pins/show.html.haml within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/pins/show.html.haml:14
+  Rendered pins/show.html.haml within layouts/application (22.7ms)
+Completed 500 Internal Server Error in 43ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (Could not find table 'votes'):
+    16:                         .btn-group.pull-right
+    17:                             =link_to like_pin_path(@pin), method: :put, class: "btn btn-default" do
+    18:                                 %span.glyphicon.glyphicon-heart
+    19:                                     = @pin.get_upvotes.size
+    20:                             =link_to "Edit", edit_pin_path, class: "btn btn-default"
+    21:                             =link_to "Delete", pin_path, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-default"
+  
+app/views/pins/show.html.haml:19:in `block in _app_views_pins_show_html_haml__376631088976844365_70165288782720'
+app/views/pins/show.html.haml:17:in `_app_views_pins_show_html_haml__376631088976844365_70165288782720'
+Started GET "/pins/3" for 127.0.0.1 at 2022-05-31 15:38:14 +0200
+Processing by PinsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mPin Load (0.2ms)[0m  [1m[34mSELECT  "pins".* FROM "pins" WHERE "pins"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/pins_controller.rb:52
+  Rendering pins/show.html.haml within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/pins/show.html.haml:14
+  Rendered pins/show.html.haml within layouts/application (9.4ms)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (Could not find table 'votes'):
+    16: 						.btn-group.pull-right	
+    17: 							=link_to like_pin_path(@pin), method: :put, class: "btn btn-default" do
+    18: 								%span.glyphicon.glyphicon-heart
+    19: 									= @pin.get_upvotes.size
+    20: 							- if user_signed_in?		
+    21: 								=link_to "Edit", edit_pin_path, class: "btn btn-default"
+    22: 								=link_to "Delete", pin_path, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-default"
+  
+app/views/pins/show.html.haml:19:in `block in _app_views_pins_show_html_haml__376631088976844365_70165282313540'
+app/views/pins/show.html.haml:17:in `_app_views_pins_show_html_haml__376631088976844365_70165282313540'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/stage/.rvm/gems/ruby-2.5.0/bin/rake:23
+Migrating to ActsAsVotableMigration (20220531134019)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/stage/.rvm/gems/ruby-2.5.0/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20220531134019_acts_as_votable_migration.rb:3
+  [1m[35m (26.9ms)[0m  [1m[35mCREATE TABLE "votes" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "votable_type" varchar, "votable_id" integer, "voter_type" varchar, "voter_id" integer, "vote_flag" boolean, "vote_scope" varchar, "vote_weight" integer, "created_at" datetime, "updated_at" datetime)[0m
+  ↳ db/migrate/20220531134019_acts_as_votable_migration.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_votes_on_voter_id_and_voter_type_and_vote_scope" ON "votes" ("voter_id", "voter_type", "vote_scope")[0m
+  ↳ db/migrate/20220531134019_acts_as_votable_migration.rb:15
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_votes_on_votable_id_and_votable_type_and_vote_scope" ON "votes" ("votable_id", "votable_type", "vote_scope")[0m
+  ↳ db/migrate/20220531134019_acts_as_votable_migration.rb:16
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20220531134019"]]
+  ↳ /home/stage/.rvm/gems/ruby-2.5.0/bin/rake:23
+  [1m[35m (140.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/stage/.rvm/gems/ruby-2.5.0/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /home/stage/.rvm/gems/ruby-2.5.0/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/stage/.rvm/gems/ruby-2.5.0/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/stage/.rvm/gems/ruby-2.5.0/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/stage/.rvm/gems/ruby-2.5.0/bin/rake:23
+Started GET "/pins/3" for 127.0.0.1 at 2022-05-31 15:40:49 +0200
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/stage/.rvm/gems/ruby-2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by PinsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mPin Load (0.2ms)[0m  [1m[34mSELECT  "pins".* FROM "pins" WHERE "pins"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/pins_controller.rb:52
+  Rendering pins/show.html.haml within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/pins/show.html.haml:14
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."vote_flag" = ?[0m  [["votable_id", 3], ["votable_type", "Pin"], ["vote_flag", 1]]
+  ↳ app/views/pins/show.html.haml:19
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/pins/show.html.haml:20
+  Rendered pins/show.html.haml within layouts/application (30.5ms)
+Completed 200 OK in 540ms (Views: 514.3ms | ActiveRecord: 2.5ms)
+
+
+Started PUT "/pins/3/like" for 127.0.0.1 at 2022-05-31 15:40:52 +0200
+Processing by PinsController#upvote as HTML
+  Parameters: {"authenticity_token"=>"EAbroOxqrDw1iyegu7jIrFIsoQhRK5KvLv8iCnuR5w0tELVSvXXb5MRAYn5R4AISTHCx099QPa1Zh9jbyGpH2g==", "id"=>"3"}
+  [1m[36mPin Load (0.2ms)[0m  [1m[34mSELECT  "pins".* FROM "pins" WHERE "pins"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/pins_controller.rb:52
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pins_controller.rb:42
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."voter_id" = ? AND "votes"."vote_scope" IS NULL AND "votes"."voter_type" = ?[0m  [["votable_id", 3], ["votable_type", "Pin"], ["voter_id", 1], ["voter_type", "User"]]
+  ↳ app/controllers/pins_controller.rb:42
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/pins_controller.rb:42
+  [1m[36mActsAsVotable::Vote Create (0.7ms)[0m  [1m[32mINSERT INTO "votes" ("votable_type", "votable_id", "voter_type", "voter_id", "vote_flag", "vote_weight", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["votable_type", "Pin"], ["votable_id", 3], ["voter_type", "User"], ["voter_id", 1], ["vote_flag", 1], ["vote_weight", 1], ["created_at", "2022-05-31 13:40:52.501503"], ["updated_at", "2022-05-31 13:40:52.501503"]]
+  ↳ app/controllers/pins_controller.rb:42
+  [1m[35m (123.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/pins_controller.rb:42
+Redirected to 
+Completed 500 Internal Server Error in 478ms (ActiveRecord: 124.7ms)
+
+
+  
+NoMethodError (undefined method `back_url' for #<PinsController:0x00007fb87230a660>):
+  
+app/controllers/pins_controller.rb:43:in `upvote'
+Started PUT "/pins/3/like" for 127.0.0.1 at 2022-05-31 15:42:02 +0200
+Processing by PinsController#upvote as HTML
+  Parameters: {"authenticity_token"=>"EAbroOxqrDw1iyegu7jIrFIsoQhRK5KvLv8iCnuR5w0tELVSvXXb5MRAYn5R4AISTHCx099QPa1Zh9jbyGpH2g==", "id"=>"3"}
+  [1m[36mPin Load (0.3ms)[0m  [1m[34mSELECT  "pins".* FROM "pins" WHERE "pins"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/pins_controller.rb:52
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pins_controller.rb:42
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."voter_id" = ? AND "votes"."vote_scope" IS NULL AND "votes"."voter_type" = ?[0m  [["votable_id", 3], ["votable_type", "Pin"], ["voter_id", 1], ["voter_type", "User"]]
+  ↳ app/controllers/pins_controller.rb:42
+  [1m[36mActsAsVotable::Vote Load (0.7ms)[0m  [1m[34mSELECT  "votes".* FROM "votes" WHERE "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."voter_id" = ? AND "votes"."vote_scope" IS NULL AND "votes"."voter_type" = ? ORDER BY "votes"."id" DESC LIMIT ?[0m  [["votable_id", 3], ["votable_type", "Pin"], ["voter_id", 1], ["voter_type", "User"], ["LIMIT", 1]]
+  ↳ app/controllers/pins_controller.rb:42
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/pins_controller.rb:42
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/pins_controller.rb:42
+Redirected to http://localhost:3000/pins/3
+Completed 302 Found in 47ms (ActiveRecord: 3.3ms)
+
+
+Started GET "/pins/3" for 127.0.0.1 at 2022-05-31 15:42:02 +0200
+Processing by PinsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mPin Load (0.1ms)[0m  [1m[34mSELECT  "pins".* FROM "pins" WHERE "pins"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/pins_controller.rb:52
+  Rendering pins/show.html.haml within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/pins/show.html.haml:14
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."vote_flag" = ?[0m  [["votable_id", 3], ["votable_type", "Pin"], ["vote_flag", 1]]
+  ↳ app/views/pins/show.html.haml:19
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/pins/show.html.haml:20
+  Rendered pins/show.html.haml within layouts/application (16.0ms)
+Completed 200 OK in 148ms (Views: 144.9ms | ActiveRecord: 0.9ms)
+
+
+Started PUT "/pins/3/like" for 127.0.0.1 at 2022-05-31 15:42:04 +0200
+Processing by PinsController#upvote as HTML
+  Parameters: {"authenticity_token"=>"kulXKSC2OvtPKwo1rJD+Dlk3c0nnNwiYlTg2A3ipmuWv/wnbcalNI77gT+tGyDSwR2tjkmlMp5riQMzSy1I6Mg==", "id"=>"3"}
+  [1m[36mPin Load (0.1ms)[0m  [1m[34mSELECT  "pins".* FROM "pins" WHERE "pins"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/pins_controller.rb:52
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pins_controller.rb:42
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."voter_id" = ? AND "votes"."vote_scope" IS NULL AND "votes"."voter_type" = ?[0m  [["votable_id", 3], ["votable_type", "Pin"], ["voter_id", 1], ["voter_type", "User"]]
+  ↳ app/controllers/pins_controller.rb:42
+  [1m[36mActsAsVotable::Vote Load (0.2ms)[0m  [1m[34mSELECT  "votes".* FROM "votes" WHERE "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."voter_id" = ? AND "votes"."vote_scope" IS NULL AND "votes"."voter_type" = ? ORDER BY "votes"."id" DESC LIMIT ?[0m  [["votable_id", 3], ["votable_type", "Pin"], ["voter_id", 1], ["voter_type", "User"], ["LIMIT", 1]]
+  ↳ app/controllers/pins_controller.rb:42
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/pins_controller.rb:42
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/pins_controller.rb:42
+Redirected to http://localhost:3000/pins/3
+Completed 302 Found in 16ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/pins/3" for 127.0.0.1 at 2022-05-31 15:42:04 +0200
+Processing by PinsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mPin Load (0.1ms)[0m  [1m[34mSELECT  "pins".* FROM "pins" WHERE "pins"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/pins_controller.rb:52
+  Rendering pins/show.html.haml within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/pins/show.html.haml:14
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."vote_flag" = ?[0m  [["votable_id", 3], ["votable_type", "Pin"], ["vote_flag", 1]]
+  ↳ app/views/pins/show.html.haml:19
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/pins/show.html.haml:20
+  Rendered pins/show.html.haml within layouts/application (14.9ms)
+Completed 200 OK in 124ms (Views: 120.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/pins/2" for 127.0.0.1 at 2022-05-31 15:42:11 +0200
+Processing by PinsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPin Load (0.2ms)[0m  [1m[34mSELECT  "pins".* FROM "pins" WHERE "pins"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/pins_controller.rb:52
+Completed 404 Not Found in 1ms (ActiveRecord: 0.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Pin with 'id'=2):
+  
+app/controllers/pins_controller.rb:52:in `find_pin'
+Started GET "/" for 127.0.0.1 at 2022-05-31 15:42:17 +0200
+Processing by PinsController#index as HTML
+  Rendering pins/index.html.haml within layouts/application
+  [1m[36mPin Load (0.9ms)[0m  [1m[34mSELECT "pins".* FROM "pins" ORDER BY created_at DESC[0m
+  ↳ app/views/pins/index.html.haml:2
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/pins/index.html.haml:9
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/pins/index.html.haml:9
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/pins/index.html.haml:9
+  Rendered pins/index.html.haml within layouts/application (16.2ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.haml:13
+Completed 200 OK in 103ms (Views: 100.4ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/pins/4" for 127.0.0.1 at 2022-05-31 15:42:19 +0200
+Processing by PinsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mPin Load (0.2ms)[0m  [1m[34mSELECT  "pins".* FROM "pins" WHERE "pins"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/pins_controller.rb:52
+  Rendering pins/show.html.haml within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/pins/show.html.haml:14
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."vote_flag" = ?[0m  [["votable_id", 4], ["votable_type", "Pin"], ["vote_flag", 1]]
+  ↳ app/views/pins/show.html.haml:19
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/pins/show.html.haml:20
+  Rendered pins/show.html.haml within layouts/application (12.8ms)
+Completed 200 OK in 80ms (Views: 78.0ms | ActiveRecord: 0.7ms)
+
+
+Started PUT "/pins/4/like" for 127.0.0.1 at 2022-05-31 15:42:22 +0200
+Processing by PinsController#upvote as HTML
+  Parameters: {"authenticity_token"=>"VWwzKkyL7P3km8NhTgGYQIca6kHBiGULM2O35jDPOnloem3YHZSbJRVQhr+kWVL+mUb6mk/zyglEG003gzSarg==", "id"=>"4"}
+  [1m[36mPin Load (0.1ms)[0m  [1m[34mSELECT  "pins".* FROM "pins" WHERE "pins"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/pins_controller.rb:52
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pins_controller.rb:42
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."voter_id" = ? AND "votes"."vote_scope" IS NULL AND "votes"."voter_type" = ?[0m  [["votable_id", 4], ["votable_type", "Pin"], ["voter_id", 1], ["voter_type", "User"]]
+  ↳ app/controllers/pins_controller.rb:42
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/pins_controller.rb:42
+  [1m[36mActsAsVotable::Vote Create (0.9ms)[0m  [1m[32mINSERT INTO "votes" ("votable_type", "votable_id", "voter_type", "voter_id", "vote_flag", "vote_weight", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["votable_type", "Pin"], ["votable_id", 4], ["voter_type", "User"], ["voter_id", 1], ["vote_flag", 1], ["vote_weight", 1], ["created_at", "2022-05-31 13:42:22.303411"], ["updated_at", "2022-05-31 13:42:22.303411"]]
+  ↳ app/controllers/pins_controller.rb:42
+  [1m[35m (210.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/pins_controller.rb:42
+Redirected to http://localhost:3000/pins/4
+Completed 302 Found in 222ms (ActiveRecord: 212.6ms)
+
+
+Started GET "/pins/4" for 127.0.0.1 at 2022-05-31 15:42:22 +0200
+Processing by PinsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mPin Load (0.2ms)[0m  [1m[34mSELECT  "pins".* FROM "pins" WHERE "pins"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/pins_controller.rb:52
+  Rendering pins/show.html.haml within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/pins/show.html.haml:14
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."vote_flag" = ?[0m  [["votable_id", 4], ["votable_type", "Pin"], ["vote_flag", 1]]
+  ↳ app/views/pins/show.html.haml:19
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/pins/show.html.haml:20
+  Rendered pins/show.html.haml within layouts/application (13.3ms)
+Completed 200 OK in 73ms (Views: 69.6ms | ActiveRecord: 0.6ms)
+
+
