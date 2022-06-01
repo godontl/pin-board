@@ -42,7 +42,7 @@ class PinsController < ApplicationController
   def destroy
     if @pin.user == current_user
       @pin.destroy
-      redirect_to root_path
+      redirect_to root_path, notice: "Il Pin è stato cancellato correttamente!"
     else
       redirect_to @pin, notice: "Il Pin non può essere cancellato perchè non sei l'autore."
     end

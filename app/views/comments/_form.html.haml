@@ -1,0 +1,7 @@
+= simple_form_for @pin.comments.new, url: pin_comments_path(@pin), method: :post, remote: true do |f|
+	
+
+	.form-group
+		= f.input :body, input_html: { class: 'form-control' }							
+
+	= f.button :submit, "Carica il commento", class: "btn btn-primary"	

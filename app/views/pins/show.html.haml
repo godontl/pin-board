@@ -13,14 +13,25 @@
 						Caricato da:
 						= @pin.user.email
 					.col-md-6
-						.btn-group.pull-right	
+						.btn-group.pull-right
 							=link_to like_pin_path(@pin), method: :put, class: "btn btn-default" do
 								%span.glyphicon.glyphicon-thumbs-up
 									= @pin.get_upvotes.size
 							=link_to dislike_pin_path(@pin), method: :put, class: "btn btn-default" do
 								%span.glyphicon.glyphicon-thumbs-down
 									= @pin.get_downvotes.size
-							- if user_signed_in?		
+							- if user_signed_in?
 								=link_to "Modifica", edit_pin_path, class: "btn btn-default"
 								=link_to "Elimina", pin_path, method: :delete, data: { confirm: "Sei sicuro?" }, class: "btn btn-default"
-                               
+					.col-md-6
+						%h2="Commenti:"
+						= @pin.comments.each do |comment|
+							.box.panel.panel-default
+								.panel-body
+									= render @pin.comment
+						- if user_signed_in?
+
+							=link_to "Modifica", edit_pin_comment_path(@pin), class: "btn btn-default"
+							=link_to "Elimina", pin_comment_path(@pin), method: :delete, data: { confirm: "Sei sicuro?" }, class: "btn btn-default"
+							%h2= "Aggiungi un commento:"
+							= render 'comments/form'
