@@ -27,16 +27,25 @@ class PinsController < ApplicationController
   end
 
   def update
-    if @pin.update(pin_params)
-      redirect_to @pin, notice: "Il Pin è stato modificato correttamente!"
+    @pin = Pin.find(params[:id])
+    if @pin.user == current_user
+      if @pin.update(pin_params)
+        redirect_to @pin, notice: "Il Pin è stato modificato correttamente!"
+      else
+        render 'edit'
+      end
     else
-      render 'edit'
+      redirect_to @pin, notice: "Il Pin non può essere modificato perchè non sei l'autore."
     end
   end
 
   def destroy
-    @pin.destroy
-    redirect_to root_path
+    if @pin.user == current_user
+      @pin.destroy
+      redirect_to root_path
+    else
+      redirect_to @pin, notice: "Il Pin non può essere cancellato perchè non sei l'autore."
+    end
   end
 
   def upvote
