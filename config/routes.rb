@@ -4,6 +4,9 @@ Rails.application.routes.draw do
     member do
       put "like", to: "pins#upvote"
     end
+    member do
+      put "dislike", to: "pins#downvote"
+    end
   end
   root "pins#index"
 end

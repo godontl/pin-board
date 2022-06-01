@@ -1,6 +1,6 @@
 class PinsController < ApplicationController
  before_action :authenticate_user!, except: [:index, :show]
- before_action :find_pin, only: [:show, :edit, :update, :destroy, :upvote]
+ before_action :find_pin, only: [:show, :edit, :update, :destroy, :upvote, :downvote]
 
   def index
     @pins = Pin.all.order("created_at DESC")
@@ -16,7 +16,7 @@ class PinsController < ApplicationController
   def create
     @pin = current_user.pins.build(pin_params)
     if @pin.save
-      redirect_to @pin, notice: "Succesfully created new Pin!"
+      redirect_to @pin, notice: "Il Pin è stato creato correttamente!"
     else
       render 'new'
     end
@@ -28,7 +28,7 @@ class PinsController < ApplicationController
 
   def update
     if @pin.update(pin_params)
-      redirect_to @pin, notice: "Pin was Succesfully updated!"
+      redirect_to @pin, notice: "Il Pin è stato modificato correttamente!"
     else
       render 'edit'
     end
@@ -43,6 +43,12 @@ class PinsController < ApplicationController
     @pin.upvote_by current_user
     redirect_back fallback_location: root_path
   end
+
+  def downvote
+    @pin.downvote_by current_user
+    redirect_back fallback_location: root_path
+  end
+
 
   private
   def pin_params

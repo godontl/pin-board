@@ -15,8 +15,11 @@
 					.col-md-6
 						.btn-group.pull-right	
 							=link_to like_pin_path(@pin), method: :put, class: "btn btn-default" do
-								%span.glyphicon.glyphicon-heart
+								%span.glyphicon.glyphicon-thumbs-up
 									= @pin.get_upvotes.size
+							=link_to dislike_pin_path(@pin), method: :put, class: "btn btn-default" do
+								%span.glyphicon.glyphicon-thumbs-down
+									= @pin.get_downvotes.size
 							- if user_signed_in?		
 								=link_to "Modifica", edit_pin_path, class: "btn btn-default"
 								=link_to "Elimina", pin_path, method: :delete, data: { confirm: "Sei sicuro?" }, class: "btn btn-default"

@@ -10,6 +10,7 @@ class ActsAsVotableMigration < ActiveRecord::Migration[4.2]
       t.integer :vote_weight
 
       t.timestamps
+
     end
 
     add_index :votes, [:voter_id, :voter_type, :vote_scope]
