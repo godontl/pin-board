@@ -9,6 +9,8 @@ Rails.application.routes.draw do
       put "dislike", to: "pins#downvote"
     end
   end
+
+
   root "pins#index"
 
 end

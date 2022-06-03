@@ -1,6 +1,5 @@
 class Comment < ApplicationRecord
-  belongs_to :pin_comments
+  belongs_to :pin
   belongs_to :user
-  belongs_to :post
-  validates :body, presence: true, length: { maximum: 10 }
+  #validates :body, length: { minimum: 2 }
 end
