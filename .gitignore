@@ -1,0 +1,14 @@
+./tmp/cache/
+./tmp/cache/*
+./tmp/pids/*
+
+tmp/cache/
+tmp/pids/
+
+public/system
+log/*
+
+log/
+db/*.sqlite3
+
+*.sqlite3
