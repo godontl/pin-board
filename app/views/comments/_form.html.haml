@@ -1,4 +1,4 @@
-= simple_form_for @pin.comments.create, url: pin_comments_path(pin_id: @pin.id, id: @pin.user), method: :post, remote: true do |f|
+= simple_form_for @pin.comments.create, url: pin_comments_path(pin_id: @pin.id), method: :post, remote: true do |f|
 	- if @pin.comments.create.errors.any?
 		#errors
 			%h2

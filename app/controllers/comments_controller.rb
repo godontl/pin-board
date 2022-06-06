@@ -1,15 +1,24 @@
 class CommentsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
-  before_action :find_pin, only: [:create, :destroy]
+  before_action :find_pin
 
   #  def index
   #    @comment = Comment.all
   #  end
 
+  # def new
+  #   @comment = Comment.build
+  # end
+
   def create
-    @comment = Comment.create[:user_id]
-    @comment.save
-    redirect_to pin_path(@pin), notice: "Il commento è stato creato."
+    @comment = Comment.create(comment_params)
+    @comment.pin = @pin
+    @comment.user = current_user
+    if @comment.save!
+      redirect_to pin_path(@pin), notice: "Il commento è stato creato."
+    else
+      redirect_to pin_path(@pin), notice: "Il commento non è stato creato. Errore: #{@comment.errors[]}"
+    end
   end
 
   def destroy
@@ -24,7 +33,7 @@ class CommentsController < ApplicationController
 
   private
     def comment_params
-      params.require(:comment).permit(:body, :user_id)
+      params.require(:comment).permit(:body, :pin_id)
     end
     def find_pin
       @pin = Pin.find(params[:pin_id])
