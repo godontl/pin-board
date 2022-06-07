@@ -1,0 +1,11 @@
+#edit_page.col-md-8.col-md-offset-2
+    .row
+        .panel.panel-default
+            .panel-heading
+                %h1 Modifica il tuo commento
+            .panel-body
+                = simple_form_for @comment, url: pin_comment_path(pin_id: @pin.id), method: :put, remote: true do |f|
+                    .form-group
+                        = f.input :body, input_html: { class: 'form-control' }
+
+                    = f.button :submit, "Modifica il commento", class: "btn btn-primary"
