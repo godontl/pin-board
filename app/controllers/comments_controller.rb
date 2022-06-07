@@ -31,12 +31,12 @@ class CommentsController < ApplicationController
     if @comment.user == current_user
       @comment.body = params["comment"]["body"]
       if @comment.save!
-        redirect_to '/pins', notice: "Il commento è stato modificato correttamente!"
+        redirect_to pin_path(@pin), notice: "Il commento è stato modificato correttamente!"
       else
         render 'edit'
       end
     else
-      redirect_to '/pins', notice: "Il commento non può essere modificato perchè non sei l'autore."
+      redirect_to pin_path(@pin), notice: "Il commento non può essere modificato perchè non sei l'autore."
     end
   end
 
