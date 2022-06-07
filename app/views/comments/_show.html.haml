@@ -1,7 +1,7 @@
 - @pin.comments.each do |c|
     %p= c.user&.email
     %p= c.body
-    %p= c.created_at
+    %p= c.created_at.localtime
     - if user_signed_in?
         =link_to "Elimina", pin_comment_path(c.pin.id, c.id ), method: :delete, data: { confirm: "Sei sicuro?" }, class: "btn btn-secondary "
     %br/
